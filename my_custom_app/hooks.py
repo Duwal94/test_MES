@@ -4,29 +4,31 @@ app_publisher = "synapse"
 app_description = "custom"
 app_email = "riyeshshrestha1094@gmail.com"
 app_license = "mit"
-fixtures=[ 
-    {"dt": "Custom Field", "filters": []},
-    {"dt": "Client Script", "filters": []},
-    {"dt": "Server Script", "filters": []},
-    {"dt": "Property Setter", "filters": []},
-    {"dt": "Workflow", "filters": []},
-    {"dt": "Workflow State", "filters": []},
-    {"dt": "Workflow Action", "filters": []},
-    {"dt": "Report", "filters": []},
-    {"dt": "Report Column", "filters": []},
-    {"dt": "Report Filter", "filters": []},
-    {"dt": "Module Def", "filters": []},
-    {"dt": "Workspace", "filters": []},
-    {"dt": "Role", "filters": []},
-    {"dt": "Role Permission for Page and Report", "filters": []},
-    {"dt": "DocType", "filters": [["custom", "=", 1]]},
-    {"dt": "DocField", "filters": [["parenttype", "=", "DocType"]]},
-    {"dt": "Email Template", "filters": []},
-    {"dt": "Notification", "filters": []},
-    {"dt": "Website Settings", "filters": []},
-    {"dt": "Web Page", "filters": []},
-    {"dt": "Web Form", "filters": []},
-    ]
+fixtures = [
+    # Custom DocType
+    {"dt": "DocType", "filters": [["name", "in", ["Stitching Entry"]]]},
+
+    # Production Plan + child tables
+    {"dt": "DocType", "filters": [["name", "in", [
+        "Production Plan",
+        "Production Plan Item",
+        "Production Plan Material Request",
+        "Production Plan Item Reference",
+        "Production Plan Sub Assembly Item",
+        "Material Request Plan Item",
+        "Production Plan Material Request Warehouse",
+        "Sales Order",
+        "Stitching Entry"
+    ]]]},
+
+    # Customizations in standard DocTypes
+    {"dt": "Custom Field", "filters": [["dt", "in", ["BOM", "Sales Order", "Delivery Note"]]]},
+    {"dt": "Property Setter", "filters": [["doc_type", "in", ["BOM", "Sales Order", "Delivery Note"]]]},
+
+    # Scripts
+    {"dt": "Server Script", "filters": []},   # all server scripts
+    {"dt": "Client Script", "filters": []},   # all client scripts
+]
 # Apps
 # ------------------
 
