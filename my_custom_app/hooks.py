@@ -4,7 +4,14 @@ app_publisher = "synapse"
 app_description = "custom"
 app_email = "riyeshshrestha1094@gmail.com"
 app_license = "mit"
-
+fixtures = [
+    "Custom Field",
+    "Property Setter",
+    "Client Script",   # for browser-side scripts
+    "Server Script",   # for backend scripts
+    "Print Format",
+    "Workflow"
+]
 # Apps
 # ------------------
 
