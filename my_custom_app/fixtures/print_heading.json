@@ -1,0 +1,18 @@
+[
+ {
+  "description": null,
+  "docstatus": 0,
+  "doctype": "Print Heading",
+  "modified": "2025-08-12 15:28:17.551814",
+  "name": "Credit Note",
+  "print_heading": "Credit Note"
+ },
+ {
+  "description": null,
+  "docstatus": 0,
+  "doctype": "Print Heading",
+  "modified": "2025-08-12 15:28:17.555575",
+  "name": "Debit Note",
+  "print_heading": "Debit Note"
+ }
+]

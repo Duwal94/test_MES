@@ -1,0 +1,44 @@
+[
+ {
+  "allow_edit": 0,
+  "disable_auto_refresh": 0,
+  "disable_automatic_recency_filters": 0,
+  "disable_comment_count": 0,
+  "disable_count": 0,
+  "disable_sidebar_stats": 0,
+  "docstatus": 0,
+  "doctype": "List View Settings",
+  "fields": "[{\"label\":\"Operation\",\"fieldname\":\"operation\"},{\"type\":\"Status\",\"label\":\"Status\",\"fieldname\":\"status_field\"},{\"label\":\"Qty To Manufacture\",\"fieldname\":\"for_quantity\"},{\"label\":\"Work Order\",\"fieldname\":\"work_order\"},{\"label\":\"Workstation\",\"fieldname\":\"workstation\"},{\"label\":\"Hour Rate\",\"fieldname\":\"hour_rate\"}]",
+  "modified": "2025-08-17 13:28:40.687181",
+  "name": "Job Card",
+  "total_fields": "8"
+ },
+ {
+  "allow_edit": 1,
+  "disable_auto_refresh": 0,
+  "disable_automatic_recency_filters": 0,
+  "disable_comment_count": 0,
+  "disable_count": 0,
+  "disable_sidebar_stats": 0,
+  "docstatus": 0,
+  "doctype": "List View Settings",
+  "fields": "[{\"label\":\"Customer Name\",\"fieldname\":\"customer_name\"},{\"type\":\"Status\",\"label\":\"Status\",\"fieldname\":\"status_field\"},{\"label\":\"Workflow State\",\"fieldname\":\"workflow_state\"},{\"label\":\"Delivery Status\",\"fieldname\":\"delivery_status\"}]",
+  "modified": "2025-09-11 17:10:45.600779",
+  "name": "Sales Order",
+  "total_fields": "7"
+ },
+ {
+  "allow_edit": 0,
+  "disable_auto_refresh": 0,
+  "disable_automatic_recency_filters": 1,
+  "disable_comment_count": 0,
+  "disable_count": 0,
+  "disable_sidebar_stats": 0,
+  "docstatus": 0,
+  "doctype": "List View Settings",
+  "fields": "[{\"fieldname\":\"name\",\"label\":\"ID\"},{\"fieldname\":\"status_field\",\"label\":\"Status\"},{\"fieldname\":\"company\",\"label\":\"Company\"},{\"fieldname\":\"get_items_from\",\"label\":\"Get Items From\"},{\"fieldname\":\"posting_date\",\"label\":\"Posting Date\"},{\"fieldname\":\"item_code\",\"label\":\"Item Code\"},{\"fieldname\":\"customer\",\"label\":\"Customer\"}]",
+  "modified": "2025-09-05 15:07:14.815737",
+  "name": "Production Plan",
+  "total_fields": "7"
+ }
+]

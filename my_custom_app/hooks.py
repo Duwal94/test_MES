@@ -4,14 +4,32 @@ app_publisher = "synapse"
 app_description = "custom"
 app_email = "riyeshshrestha1094@gmail.com"
 app_license = "mit"
-fixtures = [
-    "Custom Field",
-    "Property Setter",
-    "Client Script",   # for browser-side scripts
-    "Server Script",   # for backend scripts
-    "Print Format",
-    "Workflow"
-]
+fixtures=[ 
+    {"dt": "Custom Field", "filters": []},
+    {"dt": "Client Script", "filters": []},
+    {"dt": "Server Script", "filters": []},
+    {"dt": "Property Setter", "filters": []},
+    {"dt": "Print Format", "filters": []},
+    {"dt": "Workflow", "filters": []},
+    {"dt": "Workflow State", "filters": []},
+    {"dt": "Workflow Action", "filters": []},
+    {"dt": "Report", "filters": []},
+    {"dt": "Report Column", "filters": []},
+    {"dt": "Report Filter", "filters": []},
+    {"dt": "Dashboard Chart", "filters": []},
+    {"dt": "Dashboard Chart Source", "filters": []},
+    {"dt": "Module Def", "filters": []},
+    {"dt": "Workspace", "filters": []},
+    {"dt": "Role", "filters": []},
+    {"dt": "Role Permission for Page and Report", "filters": []},
+    {"dt": "DocType", "filters": [["custom", "=", 1]]},
+    {"dt": "DocField", "filters": [["parenttype", "=", "DocType"]]},
+    {"dt": "Email Template", "filters": []},
+    {"dt": "Notification", "filters": []},
+    {"dt": "Website Settings", "filters": []},
+    {"dt": "Web Page", "filters": []},
+    {"dt": "Web Form", "filters": []},
+    ]
 # Apps
 # ------------------
 

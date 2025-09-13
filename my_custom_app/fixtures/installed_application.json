@@ -1,0 +1,44 @@
+[
+ {
+  "app_name": "frappe",
+  "app_version": "15.77.0",
+  "docstatus": 0,
+  "doctype": "Installed Application",
+  "git_branch": "UNVERSIONED",
+  "has_setup_wizard": 1,
+  "is_setup_complete": 1,
+  "modified": "2025-09-07 15:02:05.832597",
+  "name": "1ti9vvpbnl",
+  "parent": "Installed Applications",
+  "parentfield": "installed_applications",
+  "parenttype": "Installed Applications"
+ },
+ {
+  "app_name": "erpnext",
+  "app_version": "15.74.0",
+  "docstatus": 0,
+  "doctype": "Installed Application",
+  "git_branch": "UNVERSIONED",
+  "has_setup_wizard": 1,
+  "is_setup_complete": 1,
+  "modified": "2025-09-07 15:02:05.832924",
+  "name": "1ti4q288gn",
+  "parent": "Installed Applications",
+  "parentfield": "installed_applications",
+  "parenttype": "Installed Applications"
+ },
+ {
+  "app_name": "my_custom_app",
+  "app_version": "0.0.1",
+  "docstatus": 0,
+  "doctype": "Installed Application",
+  "git_branch": "develop",
+  "has_setup_wizard": 0,
+  "is_setup_complete": 0,
+  "modified": "2025-09-07 15:02:05.833222",
+  "name": "1tin1l0t0d",
+  "parent": "Installed Applications",
+  "parentfield": "installed_applications",
+  "parenttype": "Installed Applications"
+ }
+]

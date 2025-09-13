@@ -1,0 +1,30 @@
+[
+ {
+  "account_currency": null,
+  "account_head": "VAT - SYN",
+  "add_deduct_tax": "Add",
+  "base_tax_amount": 0.0,
+  "base_tax_amount_after_discount_amount": 0.0,
+  "base_total": 0.0,
+  "category": "Total",
+  "charge_type": "On Net Total",
+  "cost_center": "Main - SYN",
+  "description": "VAT @ 13.0",
+  "docstatus": 0,
+  "doctype": "Purchase Taxes and Charges",
+  "included_in_paid_amount": 0,
+  "included_in_print_rate": 0,
+  "is_tax_withholding_account": 0,
+  "item_wise_tax_detail": null,
+  "modified": "2025-08-12 15:28:21.111328",
+  "name": "vpr96gh1k2",
+  "parent": "Nepal Tax - SYN",
+  "parentfield": "taxes",
+  "parenttype": "Purchase Taxes and Charges Template",
+  "rate": 13.0,
+  "row_id": null,
+  "tax_amount": 0.0,
+  "tax_amount_after_discount_amount": 0.0,
+  "total": 0.0
+ }
+]

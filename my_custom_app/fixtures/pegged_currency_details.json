@@ -1,0 +1,74 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Pegged Currency Details",
+  "modified": "2025-08-12 15:09:20.724106",
+  "name": "tene1b49i2",
+  "parent": "Pegged Currencies",
+  "parentfield": "pegged_currency_item",
+  "parenttype": "Pegged Currencies",
+  "pegged_against": "USD",
+  "pegged_exchange_rate": "3.6725",
+  "source_currency": "AED"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Pegged Currency Details",
+  "modified": "2025-08-12 15:09:20.724413",
+  "name": "ten6ub1er7",
+  "parent": "Pegged Currencies",
+  "parentfield": "pegged_currency_item",
+  "parenttype": "Pegged Currencies",
+  "pegged_against": "USD",
+  "pegged_exchange_rate": "0.376",
+  "source_currency": "BHD"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Pegged Currency Details",
+  "modified": "2025-08-12 15:09:20.724701",
+  "name": "tenauf7ojb",
+  "parent": "Pegged Currencies",
+  "parentfield": "pegged_currency_item",
+  "parenttype": "Pegged Currencies",
+  "pegged_against": "USD",
+  "pegged_exchange_rate": "0.709",
+  "source_currency": "JOD"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Pegged Currency Details",
+  "modified": "2025-08-12 15:09:20.726642",
+  "name": "ten9aukjal",
+  "parent": "Pegged Currencies",
+  "parentfield": "pegged_currency_item",
+  "parenttype": "Pegged Currencies",
+  "pegged_against": "USD",
+  "pegged_exchange_rate": "0.3845",
+  "source_currency": "OMR"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Pegged Currency Details",
+  "modified": "2025-08-12 15:09:20.726875",
+  "name": "ten90ueao2",
+  "parent": "Pegged Currencies",
+  "parentfield": "pegged_currency_item",
+  "parenttype": "Pegged Currencies",
+  "pegged_against": "USD",
+  "pegged_exchange_rate": "3.64",
+  "source_currency": "QAR"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Pegged Currency Details",
+  "modified": "2025-08-12 15:09:20.727085",
+  "name": "tenbm7h6tj",
+  "parent": "Pegged Currencies",
+  "parentfield": "pegged_currency_item",
+  "parenttype": "Pegged Currencies",
+  "pegged_against": "USD",
+  "pegged_exchange_rate": "3.75",
+  "source_currency": "SAR"
+ }
+]

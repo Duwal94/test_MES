@@ -1,0 +1,1698 @@
+[
+ {
+  "allowed_in_mentions": 1,
+  "api_key": null,
+  "api_secret": null,
+  "banner_image": null,
+  "bio": null,
+  "birth_date": null,
+  "block_modules": [],
+  "bulk_actions": 1,
+  "bypass_restrict_ip_check_if_2fa_enabled": 0,
+  "dashboard": 1,
+  "default_app": null,
+  "default_workspace": null,
+  "defaults": [],
+  "desk_theme": "Light",
+  "docstatus": 0,
+  "doctype": "User",
+  "document_follow_frequency": "Daily",
+  "document_follow_notify": 0,
+  "email": "admin@example.com",
+  "email_signature": null,
+  "enabled": 1,
+  "first_name": "Administrator",
+  "follow_assigned_documents": 0,
+  "follow_commented_documents": 0,
+  "follow_created_documents": 0,
+  "follow_liked_documents": 0,
+  "follow_shared_documents": 0,
+  "form_sidebar": 1,
+  "full_name": "Administrator",
+  "gender": null,
+  "home_settings": null,
+  "interest": null,
+  "language": null,
+  "last_active": "2025-09-07 15:57:25.644281",
+  "last_ip": "172.18.0.1",
+  "last_known_versions": "{\"frappe\": {\"title\": \"Frappe Framework\", \"description\": \"Full stack web framework with Python, Javascript, MariaDB, Redis, Node\", \"branch\": \"\", \"version\": \"15.76.0\"}, \"erpnext\": {\"title\": \"ERPNext\", \"description\": \"ERP made simple\", \"branch\": \"\", \"version\": \"15.74.0\"}}",
+  "last_login": "2025-09-07 15:28:45.528874",
+  "last_name": null,
+  "last_password_reset_date": null,
+  "last_reset_password_key_generated_on": null,
+  "list_sidebar": 1,
+  "location": null,
+  "login_after": 0,
+  "login_before": 0,
+  "logout_all_sessions": 1,
+  "middle_name": null,
+  "mobile_no": null,
+  "modified": "2025-08-12 15:28:16.816483",
+  "module_profile": null,
+  "mute_sounds": 0,
+  "name": "Administrator",
+  "new_password": "",
+  "notifications": 1,
+  "onboarding_status": "{}",
+  "phone": null,
+  "redirect_url": null,
+  "reset_password_key": null,
+  "restrict_ip": null,
+  "role_profile_name": null,
+  "roles": [
+   {
+    "parent": "Administrator",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Administrator"
+   },
+   {
+    "parent": "Administrator",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Maintenance Manager"
+   },
+   {
+    "parent": "Administrator",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Purchase Manager"
+   },
+   {
+    "parent": "Administrator",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Sales Master Manager"
+   },
+   {
+    "parent": "Administrator",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Sales Manager"
+   },
+   {
+    "parent": "Administrator",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Purchase Master Manager"
+   },
+   {
+    "parent": "Administrator",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Maintenance User"
+   },
+   {
+    "parent": "Administrator",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Sales User"
+   },
+   {
+    "parent": "Administrator",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Accounts Manager"
+   },
+   {
+    "parent": "Administrator",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Purchase User"
+   },
+   {
+    "parent": "Administrator",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Accounts User"
+   },
+   {
+    "parent": "Administrator",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Knowledge Base Contributor"
+   },
+   {
+    "parent": "Administrator",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Knowledge Base Editor"
+   },
+   {
+    "parent": "Administrator",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Newsletter Manager"
+   },
+   {
+    "parent": "Administrator",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Blogger"
+   },
+   {
+    "parent": "Administrator",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Translator"
+   },
+   {
+    "parent": "Administrator",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Inbox User"
+   },
+   {
+    "parent": "Administrator",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Prepared Report User"
+   },
+   {
+    "parent": "Administrator",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Script Manager"
+   },
+   {
+    "parent": "Administrator",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Report Manager"
+   },
+   {
+    "parent": "Administrator",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Workspace Manager"
+   },
+   {
+    "parent": "Administrator",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Dashboard Manager"
+   },
+   {
+    "parent": "Administrator",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Website Manager"
+   },
+   {
+    "parent": "Administrator",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Desk User"
+   },
+   {
+    "parent": "Administrator",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Guest"
+   },
+   {
+    "parent": "Administrator",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "System Manager"
+   },
+   {
+    "parent": "Administrator",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "All"
+   },
+   {
+    "parent": "Administrator",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Stock Manager"
+   },
+   {
+    "parent": "Administrator",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Projects User"
+   },
+   {
+    "parent": "Administrator",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Delivery Manager"
+   },
+   {
+    "parent": "Administrator",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Projects Manager"
+   },
+   {
+    "parent": "Administrator",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Fulfillment User"
+   },
+   {
+    "parent": "Administrator",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Support Team"
+   },
+   {
+    "parent": "Administrator",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Auditor"
+   },
+   {
+    "parent": "Administrator",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Delivery User"
+   },
+   {
+    "parent": "Administrator",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Manufacturing User"
+   },
+   {
+    "parent": "Administrator",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Fleet Manager"
+   },
+   {
+    "parent": "Administrator",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Analytics"
+   },
+   {
+    "parent": "Administrator",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Agriculture Manager"
+   },
+   {
+    "parent": "Administrator",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "HR User"
+   },
+   {
+    "parent": "Administrator",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Manufacturing Manager"
+   },
+   {
+    "parent": "Administrator",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Stock User"
+   },
+   {
+    "parent": "Administrator",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "HR Manager"
+   },
+   {
+    "parent": "Administrator",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Academics User"
+   },
+   {
+    "parent": "Administrator",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Quality Manager"
+   },
+   {
+    "parent": "Administrator",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Item Manager"
+   },
+   {
+    "parent": "Administrator",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Agriculture User"
+   }
+  ],
+  "search_bar": 1,
+  "send_me_a_copy": 0,
+  "send_welcome_email": 1,
+  "simultaneous_sessions": 2,
+  "social_logins": [],
+  "thread_notify": 0,
+  "time_zone": "Asia/Kathmandu",
+  "timeline": 1,
+  "unsubscribed": 0,
+  "user_emails": [],
+  "user_image": null,
+  "user_type": "System User",
+  "username": "administrator",
+  "view_switcher": 1
+ },
+ {
+  "allowed_in_mentions": 1,
+  "api_key": null,
+  "api_secret": null,
+  "banner_image": null,
+  "bio": null,
+  "birth_date": null,
+  "block_modules": [],
+  "bulk_actions": 1,
+  "bypass_restrict_ip_check_if_2fa_enabled": 0,
+  "dashboard": 1,
+  "default_app": null,
+  "default_workspace": null,
+  "defaults": [],
+  "desk_theme": "Light",
+  "docstatus": 0,
+  "doctype": "User",
+  "document_follow_frequency": "Daily",
+  "document_follow_notify": 0,
+  "email": "guest@example.com",
+  "email_signature": null,
+  "enabled": 1,
+  "first_name": "Guest",
+  "follow_assigned_documents": 0,
+  "follow_commented_documents": 0,
+  "follow_created_documents": 0,
+  "follow_liked_documents": 0,
+  "follow_shared_documents": 0,
+  "form_sidebar": 1,
+  "full_name": "Guest",
+  "gender": null,
+  "home_settings": null,
+  "interest": null,
+  "language": null,
+  "last_active": null,
+  "last_ip": null,
+  "last_known_versions": null,
+  "last_login": null,
+  "last_name": null,
+  "last_password_reset_date": null,
+  "last_reset_password_key_generated_on": null,
+  "list_sidebar": 1,
+  "location": null,
+  "login_after": 0,
+  "login_before": 0,
+  "logout_all_sessions": 1,
+  "middle_name": null,
+  "mobile_no": null,
+  "modified": "2025-08-12 15:28:16.815559",
+  "module_profile": null,
+  "mute_sounds": 0,
+  "name": "Guest",
+  "new_password": "",
+  "notifications": 1,
+  "onboarding_status": "{}",
+  "phone": null,
+  "redirect_url": null,
+  "reset_password_key": null,
+  "restrict_ip": null,
+  "role_profile_name": null,
+  "roles": [
+   {
+    "parent": "Guest",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Guest"
+   }
+  ],
+  "search_bar": 1,
+  "send_me_a_copy": 0,
+  "send_welcome_email": 1,
+  "simultaneous_sessions": 2,
+  "social_logins": [],
+  "thread_notify": 0,
+  "time_zone": "Asia/Kathmandu",
+  "timeline": 1,
+  "unsubscribed": 0,
+  "user_emails": [],
+  "user_image": null,
+  "user_type": "Website User",
+  "username": "guest",
+  "view_switcher": 1
+ },
+ {
+  "allowed_in_mentions": 1,
+  "api_key": null,
+  "api_secret": null,
+  "banner_image": null,
+  "bio": null,
+  "birth_date": null,
+  "block_modules": [],
+  "bulk_actions": 1,
+  "bypass_restrict_ip_check_if_2fa_enabled": 0,
+  "dashboard": 1,
+  "default_app": null,
+  "default_workspace": null,
+  "defaults": [],
+  "desk_theme": "Light",
+  "docstatus": 0,
+  "doctype": "User",
+  "document_follow_frequency": "Daily",
+  "document_follow_notify": 0,
+  "email": "jinga1094@gmail.com",
+  "email_signature": null,
+  "enabled": 1,
+  "first_name": "Riyesh",
+  "follow_assigned_documents": 0,
+  "follow_commented_documents": 0,
+  "follow_created_documents": 0,
+  "follow_liked_documents": 0,
+  "follow_shared_documents": 0,
+  "form_sidebar": 1,
+  "full_name": "Riyesh Duwal Shrestha",
+  "gender": null,
+  "home_settings": null,
+  "interest": null,
+  "language": "en",
+  "last_active": "2025-09-13 16:47:20.205185",
+  "last_ip": "172.18.0.1",
+  "last_known_versions": "{\"frappe\": {\"title\": \"Frappe Framework\", \"description\": \"Full stack web framework with Python, Javascript, MariaDB, Redis, Node\", \"branch\": \"\", \"version\": \"15.76.0\"}, \"erpnext\": {\"title\": \"ERPNext\", \"description\": \"ERP made simple\", \"branch\": \"\", \"version\": \"15.74.0\"}}",
+  "last_login": "2025-09-04 12:05:22.056934",
+  "last_name": "Duwal Shrestha",
+  "last_password_reset_date": null,
+  "last_reset_password_key_generated_on": null,
+  "list_sidebar": 1,
+  "location": null,
+  "login_after": 0,
+  "login_before": 0,
+  "logout_all_sessions": 1,
+  "middle_name": null,
+  "mobile_no": null,
+  "modified": "2025-09-05 15:04:23.905929",
+  "module_profile": null,
+  "mute_sounds": 0,
+  "name": "jinga1094@gmail.com",
+  "new_password": "",
+  "notifications": 1,
+  "onboarding_status": "{}",
+  "phone": null,
+  "redirect_url": null,
+  "reset_password_key": null,
+  "restrict_ip": null,
+  "role_profile_name": null,
+  "roles": [
+   {
+    "parent": "jinga1094@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Maintenance Manager"
+   },
+   {
+    "parent": "jinga1094@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Analytics"
+   },
+   {
+    "parent": "jinga1094@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "HR User"
+   },
+   {
+    "parent": "jinga1094@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Sales Manager"
+   },
+   {
+    "parent": "jinga1094@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Fleet Manager"
+   },
+   {
+    "parent": "jinga1094@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Quality Manager"
+   },
+   {
+    "parent": "jinga1094@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Purchase Master Manager"
+   },
+   {
+    "parent": "jinga1094@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Projects User"
+   },
+   {
+    "parent": "jinga1094@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Prepared Report User"
+   },
+   {
+    "parent": "jinga1094@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Report Manager"
+   },
+   {
+    "parent": "jinga1094@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Manufacturing Manager"
+   },
+   {
+    "parent": "jinga1094@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Manufacturing User"
+   },
+   {
+    "parent": "jinga1094@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Accounts Manager"
+   },
+   {
+    "parent": "jinga1094@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Agriculture User"
+   },
+   {
+    "parent": "jinga1094@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Support Team"
+   },
+   {
+    "parent": "jinga1094@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Dashboard Manager"
+   },
+   {
+    "parent": "jinga1094@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Projects Manager"
+   },
+   {
+    "parent": "jinga1094@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Sales User"
+   },
+   {
+    "parent": "jinga1094@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "System Manager"
+   },
+   {
+    "parent": "jinga1094@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Fulfillment User"
+   },
+   {
+    "parent": "jinga1094@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Script Manager"
+   },
+   {
+    "parent": "jinga1094@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Workspace Manager"
+   },
+   {
+    "parent": "jinga1094@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Purchase Manager"
+   },
+   {
+    "parent": "jinga1094@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Sales Master Manager"
+   },
+   {
+    "parent": "jinga1094@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Inbox User"
+   },
+   {
+    "parent": "jinga1094@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Website Manager"
+   },
+   {
+    "parent": "jinga1094@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "HR Manager"
+   },
+   {
+    "parent": "jinga1094@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Delivery Manager"
+   },
+   {
+    "parent": "jinga1094@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Delivery User"
+   },
+   {
+    "parent": "jinga1094@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Purchase User"
+   },
+   {
+    "parent": "jinga1094@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Translator"
+   },
+   {
+    "parent": "jinga1094@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Maintenance User"
+   },
+   {
+    "parent": "jinga1094@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Knowledge Base Contributor"
+   },
+   {
+    "parent": "jinga1094@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Blogger"
+   },
+   {
+    "parent": "jinga1094@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Stock User"
+   },
+   {
+    "parent": "jinga1094@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Academics User"
+   },
+   {
+    "parent": "jinga1094@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Accounts User"
+   },
+   {
+    "parent": "jinga1094@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Agriculture Manager"
+   },
+   {
+    "parent": "jinga1094@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Item Manager"
+   },
+   {
+    "parent": "jinga1094@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Auditor"
+   },
+   {
+    "parent": "jinga1094@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Newsletter Manager"
+   },
+   {
+    "parent": "jinga1094@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Knowledge Base Editor"
+   },
+   {
+    "parent": "jinga1094@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Stock Manager"
+   }
+  ],
+  "search_bar": 1,
+  "send_me_a_copy": 0,
+  "send_welcome_email": 1,
+  "simultaneous_sessions": 2,
+  "social_logins": [
+   {
+    "parent": "jinga1094@gmail.com",
+    "parentfield": "social_logins",
+    "parenttype": "User",
+    "provider": "frappe",
+    "userid": "e9e37c54fd8ce11ee49d4fc82e6a1fc1404b50c",
+    "username": null
+   }
+  ],
+  "thread_notify": 1,
+  "time_zone": "Asia/Kathmandu",
+  "timeline": 1,
+  "unsubscribed": 0,
+  "user_emails": [
+   {
+    "awaiting_password": 0,
+    "email_account": "Jinga 94",
+    "email_id": "jinga1094@gmail.com",
+    "enable_outgoing": 1,
+    "parent": "jinga1094@gmail.com",
+    "parentfield": "user_emails",
+    "parenttype": "User",
+    "used_oauth": 0
+   }
+  ],
+  "user_image": null,
+  "user_type": "System User",
+  "username": "riyesh",
+  "view_switcher": 1
+ },
+ {
+  "allowed_in_mentions": 1,
+  "api_key": null,
+  "api_secret": null,
+  "banner_image": null,
+  "bio": null,
+  "birth_date": null,
+  "block_modules": [
+   {
+    "module": "Accounts",
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "block_modules",
+    "parenttype": "User"
+   },
+   {
+    "module": "Assets",
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "block_modules",
+    "parenttype": "User"
+   },
+   {
+    "module": "Automation",
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "block_modules",
+    "parenttype": "User"
+   },
+   {
+    "module": "Bulk Transaction",
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "block_modules",
+    "parenttype": "User"
+   },
+   {
+    "module": "Buying",
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "block_modules",
+    "parenttype": "User"
+   },
+   {
+    "module": "Communication",
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "block_modules",
+    "parenttype": "User"
+   },
+   {
+    "module": "Contacts",
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "block_modules",
+    "parenttype": "User"
+   },
+   {
+    "module": "Core",
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "block_modules",
+    "parenttype": "User"
+   },
+   {
+    "module": "CRM",
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "block_modules",
+    "parenttype": "User"
+   },
+   {
+    "module": "Custom",
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "block_modules",
+    "parenttype": "User"
+   },
+   {
+    "module": "Desk",
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "block_modules",
+    "parenttype": "User"
+   },
+   {
+    "module": "EDI",
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "block_modules",
+    "parenttype": "User"
+   },
+   {
+    "module": "Email",
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "block_modules",
+    "parenttype": "User"
+   },
+   {
+    "module": "ERPNext Integrations",
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "block_modules",
+    "parenttype": "User"
+   },
+   {
+    "module": "Geo",
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "block_modules",
+    "parenttype": "User"
+   },
+   {
+    "module": "Integrations",
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "block_modules",
+    "parenttype": "User"
+   },
+   {
+    "module": "Maintenance",
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "block_modules",
+    "parenttype": "User"
+   },
+   {
+    "module": "Portal",
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "block_modules",
+    "parenttype": "User"
+   },
+   {
+    "module": "Printing",
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "block_modules",
+    "parenttype": "User"
+   },
+   {
+    "module": "Projects",
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "block_modules",
+    "parenttype": "User"
+   },
+   {
+    "module": "Quality Management",
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "block_modules",
+    "parenttype": "User"
+   },
+   {
+    "module": "Regional",
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "block_modules",
+    "parenttype": "User"
+   },
+   {
+    "module": "Selling",
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "block_modules",
+    "parenttype": "User"
+   },
+   {
+    "module": "Setup",
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "block_modules",
+    "parenttype": "User"
+   },
+   {
+    "module": "Social",
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "block_modules",
+    "parenttype": "User"
+   },
+   {
+    "module": "Subcontracting",
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "block_modules",
+    "parenttype": "User"
+   },
+   {
+    "module": "Support",
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "block_modules",
+    "parenttype": "User"
+   },
+   {
+    "module": "Telephony",
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "block_modules",
+    "parenttype": "User"
+   },
+   {
+    "module": "Utilities",
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "block_modules",
+    "parenttype": "User"
+   },
+   {
+    "module": "Website",
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "block_modules",
+    "parenttype": "User"
+   },
+   {
+    "module": "Workflow",
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "block_modules",
+    "parenttype": "User"
+   }
+  ],
+  "bulk_actions": 1,
+  "bypass_restrict_ip_check_if_2fa_enabled": 0,
+  "dashboard": 1,
+  "default_app": null,
+  "default_workspace": null,
+  "defaults": [],
+  "desk_theme": "Light",
+  "docstatus": 0,
+  "doctype": "User",
+  "document_follow_frequency": "Daily",
+  "document_follow_notify": 0,
+  "email": "likeshmhz1213@gmail.com",
+  "email_signature": null,
+  "enabled": 1,
+  "first_name": "likesh",
+  "follow_assigned_documents": 0,
+  "follow_commented_documents": 0,
+  "follow_created_documents": 0,
+  "follow_liked_documents": 0,
+  "follow_shared_documents": 0,
+  "form_sidebar": 1,
+  "full_name": "likesh",
+  "gender": null,
+  "home_settings": null,
+  "interest": null,
+  "language": "en",
+  "last_active": "2025-09-08 15:46:29.840266",
+  "last_ip": "172.18.0.1",
+  "last_known_versions": "{\"frappe\": {\"title\": \"Frappe Framework\", \"description\": \"Full stack web framework with Python, Javascript, MariaDB, Redis, Node\", \"branch\": \"\", \"version\": \"15.76.0\"}, \"erpnext\": {\"title\": \"ERPNext\", \"description\": \"ERP made simple\", \"branch\": \"\", \"version\": \"15.74.0\"}}",
+  "last_login": "2025-09-01 12:13:02.023956",
+  "last_name": null,
+  "last_password_reset_date": "2025-09-01",
+  "last_reset_password_key_generated_on": "2025-09-01 12:07:13.558676",
+  "list_sidebar": 1,
+  "location": null,
+  "login_after": 0,
+  "login_before": 0,
+  "logout_all_sessions": 1,
+  "middle_name": null,
+  "mobile_no": null,
+  "modified": "2025-09-01 13:03:35.194331",
+  "module_profile": null,
+  "mute_sounds": 0,
+  "name": "likeshmhz1213@gmail.com",
+  "new_password": "",
+  "notifications": 1,
+  "onboarding_status": "{}",
+  "phone": null,
+  "redirect_url": "",
+  "reset_password_key": "",
+  "restrict_ip": null,
+  "role_profile_name": "",
+  "roles": [
+   {
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Stock User"
+   },
+   {
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Manufacturing User"
+   },
+   {
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Manufacturing Manager"
+   },
+   {
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Academics User"
+   },
+   {
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Accounts Manager"
+   },
+   {
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Accounts User"
+   },
+   {
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Agriculture Manager"
+   },
+   {
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Agriculture User"
+   },
+   {
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Analytics"
+   },
+   {
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Auditor"
+   },
+   {
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Blogger"
+   },
+   {
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Customer"
+   },
+   {
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Dashboard Manager"
+   },
+   {
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Delivery Manager"
+   },
+   {
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Delivery User"
+   },
+   {
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Fleet Manager"
+   },
+   {
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Fulfillment User"
+   },
+   {
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "HR Manager"
+   },
+   {
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "HR User"
+   },
+   {
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Inbox User"
+   },
+   {
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Item Manager"
+   },
+   {
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Knowledge Base Contributor"
+   },
+   {
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Knowledge Base Editor"
+   },
+   {
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Maintenance Manager"
+   },
+   {
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Maintenance User"
+   },
+   {
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Newsletter Manager"
+   },
+   {
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Prepared Report User"
+   },
+   {
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Projects Manager"
+   },
+   {
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Projects User"
+   },
+   {
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Purchase Manager"
+   },
+   {
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Purchase Master Manager"
+   },
+   {
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Purchase User"
+   },
+   {
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Quality Manager"
+   },
+   {
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Report Manager"
+   },
+   {
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Sales Manager"
+   },
+   {
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Sales Master Manager"
+   },
+   {
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Sales User"
+   },
+   {
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Script Manager"
+   },
+   {
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Stock Manager"
+   },
+   {
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Supplier"
+   },
+   {
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Support Team"
+   },
+   {
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "System Manager"
+   },
+   {
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Translator"
+   },
+   {
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Website Manager"
+   },
+   {
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Workspace Manager"
+   }
+  ],
+  "search_bar": 1,
+  "send_me_a_copy": 0,
+  "send_welcome_email": 1,
+  "simultaneous_sessions": 2,
+  "social_logins": [
+   {
+    "parent": "likeshmhz1213@gmail.com",
+    "parentfield": "social_logins",
+    "parenttype": "User",
+    "provider": "frappe",
+    "userid": "e1c0990272c08a3474d88b6a9fb2d2f147acbae",
+    "username": null
+   }
+  ],
+  "thread_notify": 1,
+  "time_zone": "Asia/Kathmandu",
+  "timeline": 1,
+  "unsubscribed": 0,
+  "user_emails": [],
+  "user_image": "https://secure.gravatar.com/avatar/c631c1f273bda853ee5fdaf2d38b117c?d=404&s=200",
+  "user_type": "System User",
+  "username": "tester",
+  "view_switcher": 1
+ },
+ {
+  "allowed_in_mentions": 1,
+  "api_key": null,
+  "api_secret": null,
+  "banner_image": null,
+  "bio": null,
+  "birth_date": null,
+  "block_modules": [],
+  "bulk_actions": 1,
+  "bypass_restrict_ip_check_if_2fa_enabled": 0,
+  "dashboard": 1,
+  "default_app": null,
+  "default_workspace": null,
+  "defaults": [],
+  "desk_theme": "Light",
+  "docstatus": 0,
+  "doctype": "User",
+  "document_follow_frequency": "Daily",
+  "document_follow_notify": 0,
+  "email": "prashanna.rajbhandari1@gmail.com",
+  "email_signature": null,
+  "enabled": 1,
+  "first_name": "prashanna",
+  "follow_assigned_documents": 0,
+  "follow_commented_documents": 0,
+  "follow_created_documents": 0,
+  "follow_liked_documents": 0,
+  "follow_shared_documents": 0,
+  "form_sidebar": 1,
+  "full_name": "prashanna",
+  "gender": null,
+  "home_settings": null,
+  "interest": null,
+  "language": "en",
+  "last_active": "2025-09-05 16:19:11.213967",
+  "last_ip": "172.18.0.1",
+  "last_known_versions": "{\"frappe\": {\"title\": \"Frappe Framework\", \"description\": \"Full stack web framework with Python, Javascript, MariaDB, Redis, Node\", \"branch\": \"\", \"version\": \"15.76.0\"}, \"erpnext\": {\"title\": \"ERPNext\", \"description\": \"ERP made simple\", \"branch\": \"\", \"version\": \"15.74.0\"}}",
+  "last_login": "2025-09-05 14:22:56.888419",
+  "last_name": null,
+  "last_password_reset_date": null,
+  "last_reset_password_key_generated_on": "2025-09-04 13:57:26.035818",
+  "list_sidebar": 1,
+  "location": null,
+  "login_after": 0,
+  "login_before": 0,
+  "logout_all_sessions": 1,
+  "middle_name": null,
+  "mobile_no": null,
+  "modified": "2025-09-04 14:02:42.871385",
+  "module_profile": null,
+  "mute_sounds": 0,
+  "name": "prashanna.rajbhandari1@gmail.com",
+  "new_password": "",
+  "notifications": 1,
+  "onboarding_status": "{}",
+  "phone": null,
+  "redirect_url": null,
+  "reset_password_key": "bdbc723f811c63797d4e8fb4a3fa63cab7cc0ecf6007ffb555ff80e7ff1f26ae",
+  "restrict_ip": null,
+  "role_profile_name": null,
+  "roles": [
+   {
+    "parent": "prashanna.rajbhandari1@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Academics User"
+   },
+   {
+    "parent": "prashanna.rajbhandari1@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Accounts Manager"
+   },
+   {
+    "parent": "prashanna.rajbhandari1@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Accounts User"
+   },
+   {
+    "parent": "prashanna.rajbhandari1@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Agriculture Manager"
+   },
+   {
+    "parent": "prashanna.rajbhandari1@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Agriculture User"
+   },
+   {
+    "parent": "prashanna.rajbhandari1@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Analytics"
+   },
+   {
+    "parent": "prashanna.rajbhandari1@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Auditor"
+   },
+   {
+    "parent": "prashanna.rajbhandari1@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Blogger"
+   },
+   {
+    "parent": "prashanna.rajbhandari1@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Customer"
+   },
+   {
+    "parent": "prashanna.rajbhandari1@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Dashboard Manager"
+   },
+   {
+    "parent": "prashanna.rajbhandari1@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Delivery Manager"
+   },
+   {
+    "parent": "prashanna.rajbhandari1@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Delivery User"
+   },
+   {
+    "parent": "prashanna.rajbhandari1@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Fleet Manager"
+   },
+   {
+    "parent": "prashanna.rajbhandari1@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Fulfillment User"
+   },
+   {
+    "parent": "prashanna.rajbhandari1@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "HR Manager"
+   },
+   {
+    "parent": "prashanna.rajbhandari1@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "HR User"
+   },
+   {
+    "parent": "prashanna.rajbhandari1@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Inbox User"
+   },
+   {
+    "parent": "prashanna.rajbhandari1@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Item Manager"
+   },
+   {
+    "parent": "prashanna.rajbhandari1@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Knowledge Base Contributor"
+   },
+   {
+    "parent": "prashanna.rajbhandari1@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Knowledge Base Editor"
+   },
+   {
+    "parent": "prashanna.rajbhandari1@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Maintenance Manager"
+   },
+   {
+    "parent": "prashanna.rajbhandari1@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Maintenance User"
+   },
+   {
+    "parent": "prashanna.rajbhandari1@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Manufacturing Manager"
+   },
+   {
+    "parent": "prashanna.rajbhandari1@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Manufacturing User"
+   },
+   {
+    "parent": "prashanna.rajbhandari1@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Newsletter Manager"
+   },
+   {
+    "parent": "prashanna.rajbhandari1@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Prepared Report User"
+   },
+   {
+    "parent": "prashanna.rajbhandari1@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Projects Manager"
+   },
+   {
+    "parent": "prashanna.rajbhandari1@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Projects User"
+   },
+   {
+    "parent": "prashanna.rajbhandari1@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Purchase Manager"
+   },
+   {
+    "parent": "prashanna.rajbhandari1@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Purchase Master Manager"
+   },
+   {
+    "parent": "prashanna.rajbhandari1@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Purchase User"
+   },
+   {
+    "parent": "prashanna.rajbhandari1@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Quality Manager"
+   },
+   {
+    "parent": "prashanna.rajbhandari1@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Report Manager"
+   },
+   {
+    "parent": "prashanna.rajbhandari1@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Sales Manager"
+   },
+   {
+    "parent": "prashanna.rajbhandari1@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Sales Master Manager"
+   },
+   {
+    "parent": "prashanna.rajbhandari1@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Sales User"
+   },
+   {
+    "parent": "prashanna.rajbhandari1@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Script Manager"
+   },
+   {
+    "parent": "prashanna.rajbhandari1@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Stock Manager"
+   },
+   {
+    "parent": "prashanna.rajbhandari1@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Stock User"
+   },
+   {
+    "parent": "prashanna.rajbhandari1@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Supplier"
+   },
+   {
+    "parent": "prashanna.rajbhandari1@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Support Team"
+   },
+   {
+    "parent": "prashanna.rajbhandari1@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "System Manager"
+   },
+   {
+    "parent": "prashanna.rajbhandari1@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Translator"
+   },
+   {
+    "parent": "prashanna.rajbhandari1@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Website Manager"
+   },
+   {
+    "parent": "prashanna.rajbhandari1@gmail.com",
+    "parentfield": "roles",
+    "parenttype": "User",
+    "role": "Workspace Manager"
+   }
+  ],
+  "search_bar": 1,
+  "send_me_a_copy": 0,
+  "send_welcome_email": 1,
+  "simultaneous_sessions": 2,
+  "social_logins": [
+   {
+    "parent": "prashanna.rajbhandari1@gmail.com",
+    "parentfield": "social_logins",
+    "parenttype": "User",
+    "provider": "frappe",
+    "userid": "9e20e57e34487bc934e3cccc4f4ca00b9ff918e",
+    "username": null
+   }
+  ],
+  "thread_notify": 1,
+  "time_zone": "Asia/Kathmandu",
+  "timeline": 1,
+  "unsubscribed": 0,
+  "user_emails": [],
+  "user_image": null,
+  "user_type": "System User",
+  "username": null,
+  "view_switcher": 1
+ }
+]
