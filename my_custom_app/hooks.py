@@ -5,9 +5,8 @@ app_description = "custom"
 app_email = "riyeshshrestha1094@gmail.com"
 app_license = "mit"
 fixtures = [
-             
-             # All DocTypes (custom + child)
-    {"doctype": "DocType"},
+
+    # All DocTypes (custom + child)
 
     # All Custom Fields
     {"doctype": "Custom Field"},
@@ -26,24 +25,23 @@ fixtures = [
     {"doctype": "Workflow State"},
     {"doctype": "Workflow Action"},
 
-    # All Reports
-    {"doctype": "Report"},
+    # All Reports (only custom)
+    {
+        "doctype": "Report",
+        "filters": [
+            ["is_standard", "=", "No"]
+        ]
+    },
     {"doctype": "Report Column"},
     {"doctype": "Report Filter"},
 
     # All Dashboards & Workspaces
-    {"doctype": "Workspace"},
-    {"doctype": "Dashboard"},
-    {"doctype": "Dashboard Chart"},
 
     # Website Pages
     {"doctype": "Web Page"},
     {"doctype": "Web Form"},
     {"doctype": "Website Theme"},
-    
-
-
-        ]
+]
 # Apps
 # ------------------
 
