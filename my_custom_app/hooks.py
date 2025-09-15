@@ -5,30 +5,45 @@ app_description = "custom"
 app_email = "riyeshshrestha1094@gmail.com"
 app_license = "mit"
 fixtures = [
-    # Custom DocType
-    {"dt": "DocType", "filters": [["name", "in", ["Stitching Entry"]]]},
+             
+             # All DocTypes (custom + child)
+    {"doctype": "DocType"},
 
-    # Production Plan + child tables
-    {"dt": "DocType", "filters": [["name", "in", [
-        "Production Plan",
-        "Production Plan Item",
-        "Production Plan Material Request",
-        "Production Plan Item Reference",
-        "Production Plan Sub Assembly Item",
-        "Material Request Plan Item",
-        "Production Plan Material Request Warehouse",
-        "Sales Order",
-        "Stitching Entry"
-    ]]]},
+    # All Custom Fields
+    {"doctype": "Custom Field"},
 
-    # Customizations in standard DocTypes
-    {"dt": "Custom Field", "filters": [["dt", "in", ["BOM", "Sales Order", "Delivery Note"]]]},
-    {"dt": "Property Setter", "filters": [["doc_type", "in", ["BOM", "Sales Order", "Delivery Note"]]]},
+    # All Property Setters
+    {"doctype": "Property Setter"},
 
-    # Scripts
-    {"dt": "Server Script", "filters": []},   # all server scripts
-    {"dt": "Client Script", "filters": []},   # all client scripts
-]
+    # All Server Scripts
+    {"doctype": "Server Script"},
+
+    # All Client Scripts
+    {"doctype": "Client Script"},
+
+    # All Workflows
+    {"doctype": "Workflow"},
+    {"doctype": "Workflow State"},
+    {"doctype": "Workflow Action"},
+
+    # All Reports
+    {"doctype": "Report"},
+    {"doctype": "Report Column"},
+    {"doctype": "Report Filter"},
+
+    # All Dashboards & Workspaces
+    {"doctype": "Workspace"},
+    {"doctype": "Dashboard"},
+    {"doctype": "Dashboard Chart"},
+
+    # Website Pages
+    {"doctype": "Web Page"},
+    {"doctype": "Web Form"},
+    {"doctype": "Website Theme"},
+    
+
+
+        ]
 # Apps
 # ------------------
 
