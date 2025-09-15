@@ -5,22 +5,34 @@ app_description = "custom"
 app_email = "riyeshshrestha1094@gmail.com"
 app_license = "mit"
 fixtures = [
+     # Custom DocTypes
+    {
+        "doctype": "DocType",
+        "filters": [
+            ["name", "=", "Stitching Entry"]
+        ]
+    },
 
+    # Optional: also include its custom fields
+    {
+        "doctype": "Custom Field",
+        "filters": [
+            ["dt", "=", "Stitching Entry"]
+        ]
+    },
+
+    # Optional: any Property Setters for it
+    {
+        "doctype": "Property Setter",
+        "filters": [
+            ["doc_type", "=", "Stitching Entry"]
+        ]
+    },
     # All DocTypes (custom + child)
-
-    # All Custom Fields
     {"doctype": "Custom Field"},
-
-    # All Property Setters
     {"doctype": "Property Setter"},
-
-    # All Server Scripts
     {"doctype": "Server Script"},
-
-    # All Client Scripts
     {"doctype": "Client Script"},
-
-    # All Workflows
     {"doctype": "Workflow"},
     {"doctype": "Workflow State"},
     {"doctype": "Workflow Action"},
@@ -35,7 +47,15 @@ fixtures = [
     {"doctype": "Report Column"},
     {"doctype": "Report Filter"},
 
-    # All Dashboards & Workspaces
+    # All Workspaces with only the "details" child table
+   # All Workspaces (only their Details child table)
+{
+    "doctype": "Workspace",
+    "filters": [
+        # optionally, you can filter by module or name if needed
+    ],
+    "child_doctypes": ["Workspace Detail"]  # the actual child table DocType name
+    },
 
     # Website Pages
     {"doctype": "Web Page"},
