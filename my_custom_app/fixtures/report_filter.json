@@ -30,5 +30,37 @@
   "parentfield": "filters",
   "parenttype": "Report",
   "wildcard_filter": 0
+ },
+ {
+  "default": null,
+  "docstatus": 0,
+  "doctype": "Report Filter",
+  "fieldname": "from_date",
+  "fieldtype": "Date",
+  "label": "From Date",
+  "mandatory": 1,
+  "modified": "2025-09-17 23:59:55.628501",
+  "name": "ihs1tcc6mg",
+  "options": null,
+  "parent": "Stitching With Date Filter",
+  "parentfield": "filters",
+  "parenttype": "Report",
+  "wildcard_filter": 0
+ },
+ {
+  "default": null,
+  "docstatus": 0,
+  "doctype": "Report Filter",
+  "fieldname": "to_date",
+  "fieldtype": "Date",
+  "label": "To Date",
+  "mandatory": 1,
+  "modified": "2025-09-17 23:59:55.628760",
+  "name": "ihsmii8p3n",
+  "options": null,
+  "parent": "Stitching With Date Filter",
+  "parentfield": "filters",
+  "parenttype": "Report",
+  "wildcard_filter": 0
  }
 ]
