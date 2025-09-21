@@ -1,7 +1,7 @@
 [
  {
   "charts": [],
-  "content": "[{\"id\":\"kb3XPLg8lb\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Your Shortcuts</b></span>\",\"col\":12}},{\"id\":\"nWd2KJPW8l\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Item\",\"col\":3}},{\"id\":\"snrzfbFr5Y\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Customer\",\"col\":3}},{\"id\":\"SHJKakmLLf\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Supplier\",\"col\":3}},{\"id\":\"CPxEyhaf3G\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales Invoice\",\"col\":3}},{\"id\":\"WU4F-HUcIQ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Leaderboard\",\"col\":3}},{\"id\":\"DuBAMI7IRN\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Daily Report\",\"col\":3}},{\"id\":\"d_KVM1gsf9\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"JVu8-FJZCu\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports &amp; Masters</b></span>\",\"col\":12}},{\"id\":\"ji2Jlm3Q8i\",\"type\":\"card\",\"data\":{\"card_name\":\"Stock\",\"col\":4}}]",
+  "content": "[{\"id\":\"kb3XPLg8lb\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Your Shortcuts</b></span>\",\"col\":12}},{\"id\":\"snrzfbFr5Y\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Customer\",\"col\":3}},{\"id\":\"WU4F-HUcIQ\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Leaderboard\",\"col\":3}},{\"id\":\"DuBAMI7IRN\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Daily Report\",\"col\":3}},{\"id\":\"KOFqhFwZV0\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Manufacturing Report\",\"col\":3}},{\"id\":\"d_KVM1gsf9\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"JVu8-FJZCu\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports &amp; Masters</b></span>\",\"col\":12}},{\"id\":\"ji2Jlm3Q8i\",\"type\":\"card\",\"data\":{\"card_name\":\"Stock\",\"col\":4}}]",
   "custom_blocks": [],
   "docstatus": 0,
   "doctype": "Workspace",
@@ -337,7 +337,7 @@
     "type": "Link"
    }
   ],
-  "modified": "2025-09-07 23:18:36.434794",
+  "modified": "2025-09-21 11:54:38.053180",
   "module": "Setup",
   "name": "Home",
   "number_cards": [],
@@ -366,21 +366,21 @@
     "url": "http://localhost:8080/daily_report"
    },
    {
-    "color": null,
-    "doc_view": null,
+    "color": "Grey",
+    "doc_view": "List",
     "format": null,
     "icon": null,
     "kanban_board": null,
-    "label": "Item",
-    "link_to": "Item",
+    "label": "Manufacturing Report",
+    "link_to": null,
     "parent": "Home",
     "parentfield": "shortcuts",
     "parenttype": "Workspace",
     "report_ref_doctype": null,
     "restrict_to_domain": null,
     "stats_filter": null,
-    "type": "DocType",
-    "url": null
+    "type": "URL",
+    "url": "http://localhost:8080/manu_report"
    },
    {
     "color": null,
@@ -390,40 +390,6 @@
     "kanban_board": null,
     "label": "Customer",
     "link_to": "Customer",
-    "parent": "Home",
-    "parentfield": "shortcuts",
-    "parenttype": "Workspace",
-    "report_ref_doctype": null,
-    "restrict_to_domain": null,
-    "stats_filter": null,
-    "type": "DocType",
-    "url": null
-   },
-   {
-    "color": null,
-    "doc_view": null,
-    "format": null,
-    "icon": null,
-    "kanban_board": null,
-    "label": "Supplier",
-    "link_to": "Supplier",
-    "parent": "Home",
-    "parentfield": "shortcuts",
-    "parenttype": "Workspace",
-    "report_ref_doctype": null,
-    "restrict_to_domain": null,
-    "stats_filter": null,
-    "type": "DocType",
-    "url": null
-   },
-   {
-    "color": null,
-    "doc_view": null,
-    "format": null,
-    "icon": null,
-    "kanban_board": null,
-    "label": "Sales Invoice",
-    "link_to": "Sales Invoice",
     "parent": "Home",
     "parentfield": "shortcuts",
     "parenttype": "Workspace",
@@ -10939,7 +10905,7 @@
   "hide_custom": 0,
   "icon": "arrow-left",
   "indicator_color": "",
-  "is_hidden": 1,
+  "is_hidden": 0,
   "label": "Payables",
   "links": [
    {
@@ -11305,7 +11271,7 @@
   "hide_custom": 0,
   "icon": "arrow-right",
   "indicator_color": "",
-  "is_hidden": 1,
+  "is_hidden": 0,
   "label": "Receivables",
   "links": [
    {
@@ -11759,7 +11725,7 @@
   "hide_custom": 0,
   "icon": "file",
   "indicator_color": "",
-  "is_hidden": 1,
+  "is_hidden": 0,
   "label": "Financial Reports",
   "links": [
    {

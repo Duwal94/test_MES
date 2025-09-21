@@ -12,22 +12,29 @@ fixtures = [
             ["name", "=", "Stitching Entry"]
         ]
     },
+    {
+        "doctype": "DocType",
+        "filters": [
+            ["name", "=", "Stock Entry"]
+        ]
+    },
 
     # Optional: also include its custom fields
     {
         "doctype": "Custom Field",
         "filters": [
-            ["dt", "=", "Stitching Entry"]
+            ["dt", "in", ["Stitching Entry", "Stock Entry"]]
         ]
     },
 
-    # Optional: any Property Setters for it
+    # Optional: any Property Setters for them
     {
         "doctype": "Property Setter",
         "filters": [
-            ["doc_type", "=", "Stitching Entry"]
+            ["doc_type", "in", ["Stitching Entry", "Stock Entry"]]
         ]
     },
+
     # All DocTypes (custom + child)
     {"doctype": "Custom Field"},
     {"doctype": "Property Setter"},
@@ -48,13 +55,10 @@ fixtures = [
     {"doctype": "Report Filter"},
 
     # All Workspaces with only the "details" child table
-   # All Workspaces (only their Details child table)
-{
-    "doctype": "Workspace",
-    "filters": [
-        # optionally, you can filter by module or name if needed
-    ],
-    "child_doctypes": ["Workspace Detail"]  # the actual child table DocType name
+    {
+        "doctype": "Workspace",
+        "filters": [],
+        "child_doctypes": ["Workspace Detail"]
     },
 
     # Website Pages
