@@ -5,46 +5,41 @@ app_description = "custom"
 app_email = "riyeshshrestha1094@gmail.com"
 app_license = "mit"
 fixtures = [
-     # Custom DocTypes
+    # --- Custom DocTypes ---
     {
         "doctype": "DocType",
         "filters": [
-            ["name", "=", "Stitching Entry"]
-        ]
-    },
-    {
-        "doctype": "DocType",
-        "filters": [
-            ["name", "=", "Stock Entry"]
+            ["name", "in", ["Stitching Entry", "Stock Entry", "Delivery Note"]]
         ]
     },
 
-    # Optional: also include its custom fields
+    # --- Custom Fields for those DocTypes ---
     {
         "doctype": "Custom Field",
         "filters": [
-            ["dt", "in", ["Stitching Entry", "Stock Entry"]]
+            ["dt", "in", ["Stitching Entry", "Stock Entry", "Delivery Note"]]
         ]
     },
 
-    # Optional: any Property Setters for them
+        # --- Property Setters for those DocTypes ---
     {
         "doctype": "Property Setter",
         "filters": [
-            ["doc_type", "in", ["Stitching Entry", "Stock Entry"]]
+            ["doc_type", "in", ["Stitching Entry", "Stock Entry", "Delivery Note"]]
         ]
     },
 
-    # All DocTypes (custom + child)
+    # --- General Customizations ---
     {"doctype": "Custom Field"},
     {"doctype": "Property Setter"},
+    {"doctype": "Custom DocPerm"},
     {"doctype": "Server Script"},
     {"doctype": "Client Script"},
     {"doctype": "Workflow"},
     {"doctype": "Workflow State"},
     {"doctype": "Workflow Action"},
 
-    # All Reports (only custom)
+    # --- Custom Reports ---
     {
         "doctype": "Report",
         "filters": [
@@ -54,18 +49,31 @@ fixtures = [
     {"doctype": "Report Column"},
     {"doctype": "Report Filter"},
 
-    # All Workspaces with only the "details" child table
+    # --- Workspaces (with child table) ---
     {
         "doctype": "Workspace",
         "filters": [],
         "child_doctypes": ["Workspace Detail"]
     },
 
-    # Website Pages
+    # --- Website Related ---
     {"doctype": "Web Page"},
     {"doctype": "Web Form"},
     {"doctype": "Website Theme"},
+
+    # --- Roles & Permissions ---
+    {
+        "doctype": "Role",
+        "filters": [
+            ["name", "in", ["Manufacturer", "Admin", "Sales", "Sales Manager"]]
+        ]
+    },
+    {"doctype": "Has Role"},  # optional (user-role links)
+    {"doctype": "Custom Role"},  # optional (custom roles)
+    {"doctype": "Role Permission for Page and Report"}  # optional
 ]
+
+
 # Apps
 # ------------------
 
