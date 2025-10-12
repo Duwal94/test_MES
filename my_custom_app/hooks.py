@@ -9,7 +9,7 @@ fixtures = [
     {
         "doctype": "DocType",
         "filters": [
-            ["name", "in", ["Stitching Entry", "Stock Entry", "Delivery Note"]]
+            ["name", "in", ["Stitching Entry", "Stock Entry"]]
         ]
     },
 
@@ -17,15 +17,15 @@ fixtures = [
     {
         "doctype": "Custom Field",
         "filters": [
-            ["dt", "in", ["Stitching Entry", "Stock Entry", "Delivery Note"]]
+            ["dt", "in", ["Stitching Entry", "Stock Entry"]]
         ]
     },
 
-        # --- Property Setters for those DocTypes ---
+    # --- Property Setters for those DocTypes ---
     {
         "doctype": "Property Setter",
         "filters": [
-            ["doc_type", "in", ["Stitching Entry", "Stock Entry", "Delivery Note"]]
+            ["doc_type", "in", ["Stitching Entry", "Stock Entry"]]
         ]
     },
 
@@ -68,11 +68,8 @@ fixtures = [
             ["name", "in", ["Manufacturer", "Admin", "Sales", "Sales Manager"]]
         ]
     },
-    {"doctype": "Has Role"},  # optional (user-role links)
     {"doctype": "Custom Role"},  # optional (custom roles)
-    {"doctype": "Role Permission for Page and Report"}  # optional
 ]
-
 
 # Apps
 # ------------------
