@@ -1027,5 +1027,26 @@
   "status": "Completed",
   "user": null,
   "workflow_state": "Pending"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2025-10-12 16:01:33.563003",
+  "name": "00f83ts5a0",
+  "permitted_roles": [
+   {
+    "parent": "00f83ts5a0",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Sales User"
+   }
+  ],
+  "reference_doctype": "Sales Order",
+  "reference_name": "SAL-ORD-2025-00029",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Draft"
  }
 ]

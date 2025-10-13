@@ -9,7 +9,7 @@ fixtures = [
     {
         "doctype": "DocType",
         "filters": [
-            ["name", "in", ["Stitching Entry", "Stock Entry"]]
+            ["name", "in", ["Stitching Entry"]]
         ]
     },
 
@@ -17,7 +17,7 @@ fixtures = [
     {
         "doctype": "Custom Field",
         "filters": [
-            ["dt", "in", ["Stitching Entry", "Stock Entry"]]
+            ["dt", "in", ["Stitching Entry"]]
         ]
     },
 
@@ -25,7 +25,7 @@ fixtures = [
     {
         "doctype": "Property Setter",
         "filters": [
-            ["doc_type", "in", ["Stitching Entry", "Stock Entry"]]
+            ["doc_type", "in", ["Stitching Entry"]]
         ]
     },
 
