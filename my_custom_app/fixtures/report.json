@@ -1,0 +1,831 @@
+[
+ {
+  "add_total_row": 0,
+  "add_translate_data": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "No",
+  "javascript": null,
+  "json": null,
+  "letter_head": null,
+  "modified": "2025-09-05 14:59:58.739391",
+  "module": "Manufacturing",
+  "name": "Stitching Work Today",
+  "prepared_report": 0,
+  "query": "WITH per_item AS (\r\n  SELECT\r\n    emp.employee_name AS employee,\r\n    DATE(COALESCE(pp.posting_date, se.creation)) AS work_date,\r\n    it.item_name,\r\n    SUM(se.quantity) AS total_qty,\r\n    SUM(COALESCE(se.amount, se.quantity * se.rate)) AS total_payable\r\n  FROM `tabStitching Entry` se\r\n  LEFT JOIN `tabProduction Plan` pp ON pp.name = se.parent\r\n  LEFT JOIN `tabItem` it ON it.name = se.item_code\r\n  LEFT JOIN `tabEmployee` emp ON emp.name = se.employee\r\n  WHERE se.parenttype = 'Production Plan'\r\n    AND DATE(COALESCE(pp.posting_date, se.creation)) = CURDATE()\r\n  GROUP BY emp.employee_name, DATE(COALESCE(pp.posting_date, se.creation)), it.item_name\r\n),\r\nall_rows AS (\r\n  SELECT employee, work_date, item_name, total_qty, total_payable, 0 AS is_total\r\n  FROM per_item\r\n  UNION ALL\r\n  SELECT employee, NULL AS work_date, 'TOTAL' AS item_name,\r\n         SUM(total_qty), SUM(total_payable), 1 AS is_total\r\n  FROM per_item\r\n  GROUP BY employee\r\n),\r\nnumbered AS (\r\n  SELECT\r\n    employee AS emp,\r\n    work_date,\r\n    item_name,\r\n    total_qty,\r\n    total_payable,\r\n    is_total,\r\n    ROW_NUMBER() OVER (PARTITION BY employee ORDER BY is_total, work_date, item_name) AS rn\r\n  FROM all_rows\r\n)\r\nSELECT\r\n  CASE WHEN rn = 1 THEN emp ELSE '' END AS employee,\r\n  work_date,\r\n  item_name,\r\n  total_qty,\r\n  total_payable\r\nFROM numbered\r\nORDER BY emp, is_total, work_date, item_name;",
+  "ref_doctype": "Production Plan",
+  "reference_report": null,
+  "report_name": "Stitching Work Today",
+  "report_script": "",
+  "report_type": "Query Report",
+  "roles": [
+   {
+    "parent": "Stitching Work Today",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Manufacturing User"
+   }
+  ],
+  "timeout": 0
+ },
+ {
+  "add_total_row": 0,
+  "add_translate_data": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "No",
+  "javascript": null,
+  "json": null,
+  "letter_head": null,
+  "modified": "2025-09-03 16:23:09.583229",
+  "module": "Stock",
+  "name": "Cutting Section",
+  "prepared_report": 0,
+  "query": "select\r\n  i.item_name as \"Cutting Item:Data:220\",\r\n  sum(sed.qty) as \"Quantity:Float:120\",\r\n  i.description as \"Item Description:Text:300\"\r\nfrom `tabStock Entry` se\r\njoin `tabStock Entry Detail` sed on sed.parent = se.name\r\njoin `tabItem` i on i.name = sed.item_code\r\nleft join `tabBOM` b on b.name = coalesce(se.bom_no, i.default_bom)\r\njoin `tabBOM Operation` bo on bo.parent = b.name\r\nwhere\r\n  se.docstatus = 1\r\n  and se.purpose = 'Manufacture'\r\n  and sed.is_finished_item = 1\r\n  and se.posting_date = curdate()\r\n  and bo.operation like 'Cutting%%'\r\ngroup by i.name, i.item_name, i.description\r\norder by i.item_name",
+  "ref_doctype": "Stock Entry",
+  "reference_report": null,
+  "report_name": "Cutting Section",
+  "report_script": null,
+  "report_type": "Query Report",
+  "roles": [
+   {
+    "parent": "Cutting Section",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Stock User"
+   },
+   {
+    "parent": "Cutting Section",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Manufacturing User"
+   },
+   {
+    "parent": "Cutting Section",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Manufacturing Manager"
+   },
+   {
+    "parent": "Cutting Section",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Stock Manager"
+   }
+  ],
+  "timeout": 0
+ },
+ {
+  "add_total_row": 0,
+  "add_translate_data": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "No",
+  "javascript": null,
+  "json": null,
+  "letter_head": null,
+  "modified": "2025-09-04 15:01:13.209875",
+  "module": "Stock",
+  "name": "Quilting Section",
+  "prepared_report": 0,
+  "query": "SELECT\n  i_fg.item_name AS \"Items:Data:220\",\n  SUM(sed_fg.qty) AS \"Quantity:Float:120\",\n\n  i_rm.item_name AS \"Fiber:Data:180\",\n  SUM(\n    IFNULL(sed_rm.transfer_qty, sed_rm.qty * IFNULL(sed_rm.conversion_factor, 1))\n  ) AS \"Weight:Float:120\"\n  -- If you want to show UOM too: , sed_rm.stock_uom AS \"UOM:Data:80\"\n\nFROM `tabStock Entry` se\n\n/* Finished goods from the Manufacture entry */\nJOIN `tabStock Entry Detail` sed_fg\n  ON sed_fg.parent = se.name AND sed_fg.is_finished_item = 1\nJOIN `tabItem` i_fg\n  ON i_fg.name = sed_fg.item_code\n\n/* Raw-material rows from the same entry */\nJOIN `tabStock Entry Detail` sed_rm\n  ON sed_rm.parent = se.name AND IFNULL(sed_rm.is_finished_item, 0) = 0\nJOIN `tabItem` i_rm\n  ON i_rm.name = sed_rm.item_code\nJOIN `tabItem Group` ig_rm\n  ON ig_rm.name = i_rm.item_group\n\n/* BOM + Operation (Quilt/Quilting) */\nLEFT JOIN `tabBOM` b\n  ON b.name = COALESCE(se.bom_no, i_fg.default_bom)\nLEFT JOIN `tabBOM Operation` bo\n  ON bo.parent = b.name\n\n/* Fiber group root for nested-set membership (includes children) */\nLEFT JOIN `tabItem Group` fiber_root\n  ON fiber_root.name = 'Fiber'\n\nWHERE\n  se.docstatus = 1\n  AND se.purpose = 'Manufacture'\n  AND se.posting_date = CURDATE()\n  AND bo.operation LIKE 'Quilt%%'\n  /* keep only RM that belong to Fiber or its children */\n  AND (\n       ig_rm.name = 'Fiber'\n       OR (fiber_root.name IS NOT NULL AND ig_rm.lft BETWEEN fiber_root.lft AND fiber_root.rgt)\n      )\n\nGROUP BY\n  i_fg.item_name,\n  i_rm.item_name\nORDER BY\n  i_fg.item_name, i_rm.item_name;\n",
+  "ref_doctype": "Stock Entry",
+  "reference_report": null,
+  "report_name": "Quilting Section",
+  "report_script": null,
+  "report_type": "Query Report",
+  "roles": [
+   {
+    "parent": "Quilting Section",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Stock User"
+   },
+   {
+    "parent": "Quilting Section",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Manufacturing User"
+   },
+   {
+    "parent": "Quilting Section",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Manufacturing Manager"
+   },
+   {
+    "parent": "Quilting Section",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Stock Manager"
+   }
+  ],
+  "timeout": 0
+ },
+ {
+  "add_total_row": 0,
+  "add_translate_data": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "No",
+  "javascript": null,
+  "json": null,
+  "letter_head": null,
+  "modified": "2025-09-04 15:55:53.380512",
+  "module": "Stock",
+  "name": "Pillow Section",
+  "prepared_report": 0,
+  "query": "SELECT\n  i_fg.item_name AS \"Items:Data:220\",\n  SUM(sed_fg.qty) AS \"Quantity:Float:120\",\n  i_rm.item_name AS \"Fiber:Data:180\",\n  SUM(\n    IFNULL(sed_rm.transfer_qty, sed_rm.qty * IFNULL(sed_rm.conversion_factor, 1))\n  ) AS \"Weight:Float:120\"\nFROM `tabStock Entry` se\n\n/* Finished goods */\nJOIN `tabStock Entry Detail` sed_fg\n  ON sed_fg.parent = se.name AND sed_fg.is_finished_item = 1\nJOIN `tabItem` i_fg\n  ON i_fg.name = sed_fg.item_code\n\n/* Raw materials */\nJOIN `tabStock Entry Detail` sed_rm\n  ON sed_rm.parent = se.name AND IFNULL(sed_rm.is_finished_item, 0) = 0\nJOIN `tabItem` i_rm\n  ON i_rm.name = sed_rm.item_code\nJOIN `tabItem Group` ig_rm\n  ON ig_rm.name = i_rm.item_group\n\n/* BOM + Operation */\nLEFT JOIN `tabBOM` b\n  ON b.name = COALESCE(se.bom_no, i_fg.default_bom)\nLEFT JOIN `tabBOM Operation` bo\n  ON bo.parent = b.name\n\n/* Fiber group reference (nested set) */\nLEFT JOIN `tabItem Group` fiber_root\n  ON fiber_root.name = 'Fiber'\n\nWHERE\n  se.docstatus = 1\n  AND se.purpose = 'Manufacture'\n  AND se.posting_date = CURDATE()\n  AND bo.operation LIKE 'Pillow%%'\n  AND (\n       ig_rm.name = 'Fiber'\n       OR (fiber_root.name IS NOT NULL AND ig_rm.lft BETWEEN fiber_root.lft AND fiber_root.rgt)\n      )\n\nGROUP BY\n  i_fg.item_name, i_rm.item_name\nORDER BY\n  i_fg.item_name, i_rm.item_name;\n",
+  "ref_doctype": "Stock Entry",
+  "reference_report": null,
+  "report_name": "Pillow Section",
+  "report_script": null,
+  "report_type": "Query Report",
+  "roles": [
+   {
+    "parent": "Pillow Section",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Stock User"
+   },
+   {
+    "parent": "Pillow Section",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Manufacturing User"
+   },
+   {
+    "parent": "Pillow Section",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Manufacturing Manager"
+   },
+   {
+    "parent": "Pillow Section",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Stock Manager"
+   }
+  ],
+  "timeout": 0
+ },
+ {
+  "add_total_row": 0,
+  "add_translate_data": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [
+   {
+    "default": null,
+    "fieldname": "from_date",
+    "fieldtype": "Date",
+    "label": "From Date",
+    "mandatory": 1,
+    "options": null,
+    "parent": "Stitching With Date Filter",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": null,
+    "fieldname": "to_date",
+    "fieldtype": "Date",
+    "label": "To Date",
+    "mandatory": 1,
+    "options": null,
+    "parent": "Stitching With Date Filter",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": null,
+    "fieldname": "to_date",
+    "fieldtype": "Date",
+    "label": "To Date",
+    "mandatory": 1,
+    "options": null,
+    "parent": "Stitching With Date Filter",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": null,
+    "fieldname": "from_date",
+    "fieldtype": "Date",
+    "label": "From Date",
+    "mandatory": 1,
+    "options": null,
+    "parent": "Stitching With Date Filter",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": null,
+    "fieldname": "to_date",
+    "fieldtype": "Date",
+    "label": "To Date",
+    "mandatory": 1,
+    "options": null,
+    "parent": "Stitching With Date Filter",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": null,
+    "fieldname": "to_date",
+    "fieldtype": "Date",
+    "label": "To Date",
+    "mandatory": 1,
+    "options": null,
+    "parent": "Stitching With Date Filter",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": null,
+    "fieldname": "from_date",
+    "fieldtype": "Date",
+    "label": "From Date",
+    "mandatory": 1,
+    "options": null,
+    "parent": "Stitching With Date Filter",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": null,
+    "fieldname": "from_date",
+    "fieldtype": "Date",
+    "label": "From Date",
+    "mandatory": 1,
+    "options": null,
+    "parent": "Stitching With Date Filter",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": null,
+    "fieldname": "from_date",
+    "fieldtype": "Date",
+    "label": "From Date",
+    "mandatory": 1,
+    "options": null,
+    "parent": "Stitching With Date Filter",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": null,
+    "fieldname": "from_date",
+    "fieldtype": "Date",
+    "label": "From Date",
+    "mandatory": 1,
+    "options": null,
+    "parent": "Stitching With Date Filter",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": null,
+    "fieldname": "to_date",
+    "fieldtype": "Date",
+    "label": "To Date",
+    "mandatory": 1,
+    "options": null,
+    "parent": "Stitching With Date Filter",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": null,
+    "fieldname": "to_date",
+    "fieldtype": "Date",
+    "label": "To Date",
+    "mandatory": 1,
+    "options": null,
+    "parent": "Stitching With Date Filter",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": null,
+    "fieldname": "to_date",
+    "fieldtype": "Date",
+    "label": "To Date",
+    "mandatory": 1,
+    "options": null,
+    "parent": "Stitching With Date Filter",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": null,
+    "fieldname": "to_date",
+    "fieldtype": "Date",
+    "label": "To Date",
+    "mandatory": 1,
+    "options": null,
+    "parent": "Stitching With Date Filter",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": null,
+    "fieldname": "from_date",
+    "fieldtype": "Date",
+    "label": "From Date",
+    "mandatory": 1,
+    "options": null,
+    "parent": "Stitching With Date Filter",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": null,
+    "fieldname": "from_date",
+    "fieldtype": "Date",
+    "label": "From Date",
+    "mandatory": 1,
+    "options": null,
+    "parent": "Stitching With Date Filter",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": null,
+    "fieldname": "from_date",
+    "fieldtype": "Date",
+    "label": "From Date",
+    "mandatory": 1,
+    "options": null,
+    "parent": "Stitching With Date Filter",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": null,
+    "fieldname": "to_date",
+    "fieldtype": "Date",
+    "label": "To Date",
+    "mandatory": 1,
+    "options": null,
+    "parent": "Stitching With Date Filter",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": null,
+    "fieldname": "to_date",
+    "fieldtype": "Date",
+    "label": "To Date",
+    "mandatory": 1,
+    "options": null,
+    "parent": "Stitching With Date Filter",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": null,
+    "fieldname": "from_date",
+    "fieldtype": "Date",
+    "label": "From Date",
+    "mandatory": 1,
+    "options": null,
+    "parent": "Stitching With Date Filter",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": null,
+    "fieldname": "to_date",
+    "fieldtype": "Date",
+    "label": "To Date",
+    "mandatory": 1,
+    "options": null,
+    "parent": "Stitching With Date Filter",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": null,
+    "fieldname": "to_date",
+    "fieldtype": "Date",
+    "label": "To Date",
+    "mandatory": 1,
+    "options": null,
+    "parent": "Stitching With Date Filter",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": null,
+    "fieldname": "from_date",
+    "fieldtype": "Date",
+    "label": "From Date",
+    "mandatory": 1,
+    "options": null,
+    "parent": "Stitching With Date Filter",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": null,
+    "fieldname": "from_date",
+    "fieldtype": "Date",
+    "label": "From Date",
+    "mandatory": 1,
+    "options": null,
+    "parent": "Stitching With Date Filter",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": null,
+    "fieldname": "from_date",
+    "fieldtype": "Date",
+    "label": "From Date",
+    "mandatory": 1,
+    "options": null,
+    "parent": "Stitching With Date Filter",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": null,
+    "fieldname": "to_date",
+    "fieldtype": "Date",
+    "label": "To Date",
+    "mandatory": 1,
+    "options": null,
+    "parent": "Stitching With Date Filter",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": null,
+    "fieldname": "to_date",
+    "fieldtype": "Date",
+    "label": "To Date",
+    "mandatory": 1,
+    "options": null,
+    "parent": "Stitching With Date Filter",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": null,
+    "fieldname": "from_date",
+    "fieldtype": "Date",
+    "label": "From Date",
+    "mandatory": 1,
+    "options": null,
+    "parent": "Stitching With Date Filter",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": null,
+    "fieldname": "to_date",
+    "fieldtype": "Date",
+    "label": "To Date",
+    "mandatory": 1,
+    "options": null,
+    "parent": "Stitching With Date Filter",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": null,
+    "fieldname": "from_date",
+    "fieldtype": "Date",
+    "label": "From Date",
+    "mandatory": 1,
+    "options": null,
+    "parent": "Stitching With Date Filter",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": null,
+    "fieldname": "from_date",
+    "fieldtype": "Date",
+    "label": "From Date",
+    "mandatory": 1,
+    "options": null,
+    "parent": "Stitching With Date Filter",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": null,
+    "fieldname": "to_date",
+    "fieldtype": "Date",
+    "label": "To Date",
+    "mandatory": 1,
+    "options": null,
+    "parent": "Stitching With Date Filter",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   }
+  ],
+  "is_standard": "No",
+  "javascript": null,
+  "json": null,
+  "letter_head": null,
+  "modified": "2025-09-05 15:23:10.068489",
+  "module": "Manufacturing",
+  "name": "Stitching With Date Filter",
+  "prepared_report": 0,
+  "query": "WITH per_item AS (\r\n  SELECT\r\n    emp.employee_name AS employee,\r\n    DATE(COALESCE(pp.posting_date, se.creation)) AS work_date,\r\n    it.item_name,\r\n    SUM(se.quantity) AS total_qty,\r\n    SUM(COALESCE(se.amount, se.quantity * se.rate)) AS total_payable\r\n  FROM `tabStitching Entry` se\r\n  LEFT JOIN `tabProduction Plan` pp ON pp.name = se.parent\r\n  LEFT JOIN `tabItem` it ON it.name = se.item_code\r\n  LEFT JOIN `tabEmployee` emp ON emp.name = se.employee\r\n  WHERE se.parenttype = 'Production Plan'\r\n    AND DATE(COALESCE(pp.posting_date, se.creation)) BETWEEN %(from_date)s AND %(to_date)s\r\n  GROUP BY emp.employee_name, DATE(COALESCE(pp.posting_date, se.creation)), it.item_name\r\n),\r\nall_rows AS (\r\n  SELECT employee, work_date, item_name, total_qty, total_payable, 0 AS is_total\r\n  FROM per_item\r\n  UNION ALL\r\n  SELECT employee, NULL AS work_date, 'TOTAL' AS item_name,\r\n         SUM(total_qty), SUM(total_payable), 1 AS is_total\r\n  FROM per_item\r\n  GROUP BY employee\r\n),\r\nnumbered AS (\r\n  SELECT\r\n    employee AS emp,\r\n    work_date,\r\n    item_name,\r\n    total_qty,\r\n    total_payable,\r\n    is_total,\r\n    ROW_NUMBER() OVER (PARTITION BY employee ORDER BY is_total, work_date, item_name) AS rn\r\n  FROM all_rows\r\n)\r\nSELECT\r\n  CASE WHEN rn = 1 THEN emp ELSE '' END AS employee,\r\n  work_date,\r\n  item_name,\r\n  total_qty,\r\n  total_payable\r\nFROM numbered\r\nORDER BY emp, is_total, work_date, item_name;",
+  "ref_doctype": "Production Plan",
+  "reference_report": null,
+  "report_name": "Stitching With Date Filter",
+  "report_script": "",
+  "report_type": "Query Report",
+  "roles": [
+   {
+    "parent": "Stitching With Date Filter",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Manufacturing User"
+   }
+  ],
+  "timeout": 0
+ },
+ {
+  "add_total_row": 0,
+  "add_translate_data": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "No",
+  "javascript": null,
+  "json": null,
+  "letter_head": null,
+  "modified": "2025-09-07 16:00:17.271070",
+  "module": "Selling",
+  "name": "Pending Report",
+  "prepared_report": 0,
+  "query": "SELECT\n    so.name AS \"Sales Order:Link/Sales Order:120\",\n    so.customer AS \"Customer:Link/Customer:180\",\n    so.transaction_date AS \"Order Date:Date:100\",\n    so.workflow_state AS \"Workflow State::150\",\n    so.owner AS \"Owner::120\"\nFROM\n    `tabSales Order` so\nWHERE\n    so.docstatus < 2\n    AND so.workflow_state = 'Pending'\nORDER BY\n    so.transaction_date DESC, so.name DESC;\n",
+  "ref_doctype": "Sales Order",
+  "reference_report": null,
+  "report_name": "Pending Report",
+  "report_script": null,
+  "report_type": "Query Report",
+  "roles": [
+   {
+    "parent": "Pending Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Sales User"
+   },
+   {
+    "parent": "Pending Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Sales Manager"
+   },
+   {
+    "parent": "Pending Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Maintenance User"
+   },
+   {
+    "parent": "Pending Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts User"
+   },
+   {
+    "parent": "Pending Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Stock User"
+   }
+  ],
+  "timeout": 0
+ },
+ {
+  "add_total_row": 0,
+  "add_translate_data": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "No",
+  "javascript": null,
+  "json": null,
+  "letter_head": null,
+  "modified": "2025-09-07 16:01:01.600099",
+  "module": "Selling",
+  "name": "Dispatch Report",
+  "prepared_report": 0,
+  "query": "SELECT\n    dn.name AS \"Delivery Note:Link/Delivery Note:150\",\n    dn.customer AS \"Customer:Link/Customer:180\",\n    dni.item_name AS \"Item Name::180\",\n    dni.qty AS \"Quantity:Float:100\",\n    dni.uom AS \"UOM:Link/UOM:80\",\n    dni.warehouse AS \"Warehouse:Link/Warehouse:150\"\nFROM\n    `tabDelivery Note` dn\nINNER JOIN\n    `tabDelivery Note Item` dni ON dn.name = dni.parent\nWHERE\n    dn.docstatus = 1\n    AND dn.posting_date = CURDATE()\nORDER BY\n    dn.name, dni.item_code;\n",
+  "ref_doctype": "Delivery Note",
+  "reference_report": null,
+  "report_name": "Dispatch Report",
+  "report_script": "",
+  "report_type": "Query Report",
+  "roles": [
+   {
+    "parent": "Dispatch Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Stock User"
+   },
+   {
+    "parent": "Dispatch Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Stock Manager"
+   },
+   {
+    "parent": "Dispatch Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Sales User"
+   },
+   {
+    "parent": "Dispatch Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts User"
+   },
+   {
+    "parent": "Dispatch Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Delivery User"
+   },
+   {
+    "parent": "Dispatch Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Delivery Manager"
+   }
+  ],
+  "timeout": 0
+ },
+ {
+  "add_total_row": 0,
+  "add_translate_data": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "No",
+  "javascript": null,
+  "json": null,
+  "letter_head": null,
+  "modified": "2025-09-15 16:14:44.166152",
+  "module": "Selling",
+  "name": "To Be Manufactured for Delivery",
+  "prepared_report": 0,
+  "query": "SELECT\r\n    soi.item_code AS \"Item:Link/Item:120\",\r\n    SUM(soi.qty - soi.delivered_qty) AS \"To Manufacture:Float:120\"\r\nFROM\r\n    `tabSales Order Item` soi\r\nJOIN\r\n    `tabSales Order` so ON soi.parent = so.name\r\nWHERE\r\n    so.docstatus = 1\r\n    AND so.status NOT IN ('Closed', 'Cancelled')\r\n    AND (soi.qty - soi.delivered_qty) > 0\r\nGROUP BY\r\n    soi.item_code\r\nORDER BY\r\n    soi.item_code;\r\n",
+  "ref_doctype": "Sales Order",
+  "reference_report": null,
+  "report_name": "To Be Manufactured for Delivery",
+  "report_script": null,
+  "report_type": "Query Report",
+  "roles": [
+   {
+    "parent": "To Be Manufactured for Delivery",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Sales User"
+   },
+   {
+    "parent": "To Be Manufactured for Delivery",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Sales Manager"
+   },
+   {
+    "parent": "To Be Manufactured for Delivery",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Maintenance User"
+   },
+   {
+    "parent": "To Be Manufactured for Delivery",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts User"
+   },
+   {
+    "parent": "To Be Manufactured for Delivery",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Stock User"
+   }
+  ],
+  "timeout": 0
+ },
+ {
+  "add_total_row": 0,
+  "add_translate_data": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "No",
+  "javascript": null,
+  "json": null,
+  "letter_head": null,
+  "modified": "2025-09-21 11:49:10.283446",
+  "module": "Selling",
+  "name": "Partial Dispatch Report",
+  "prepared_report": 0,
+  "query": "SELECT\r\n    so.transaction_date AS \"Date:Date:100\",\r\n    so.customer AS \"Customer:Link/Customer:150\",\r\n    soi.item_code AS \"Item:Link/Item:120\",\r\n    soi.qty AS \"Ordered Qty:Float:100\",\r\n    soi.delivered_qty AS \"Delivered Qty:Float:100\",\r\n    (soi.qty - soi.delivered_qty) AS \"Pending Qty:Float:100\",\r\n    so.status AS \"Order Status:Data:120\"\r\nFROM\r\n    `tabSales Order Item` soi\r\nJOIN\r\n    `tabSales Order` so ON soi.parent = so.name\r\nWHERE\r\n    so.docstatus = 1\r\n    AND so.status NOT IN ('Closed', 'Cancelled')\r\n    AND soi.delivered_qty > 0\r\n    AND soi.delivered_qty < soi.qty\r\nORDER BY\r\n    so.transaction_date DESC, so.name;\r\n",
+  "ref_doctype": "Sales Order",
+  "reference_report": null,
+  "report_name": "Partial Dispatch Report",
+  "report_script": null,
+  "report_type": "Query Report",
+  "roles": [
+   {
+    "parent": "Partial Dispatch Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Sales User"
+   },
+   {
+    "parent": "Partial Dispatch Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Sales Manager"
+   },
+   {
+    "parent": "Partial Dispatch Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Maintenance User"
+   },
+   {
+    "parent": "Partial Dispatch Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts User"
+   },
+   {
+    "parent": "Partial Dispatch Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Stock User"
+   }
+  ],
+  "timeout": 0
+ }
+]
