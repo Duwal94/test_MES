@@ -35,11 +35,17 @@ fixtures = [
     {"doctype": "Custom DocPerm"},
     {"doctype": "Server Script"},
     {"doctype": "Client Script"},
-    {"doctype": "Notification"},
     {"doctype": "Stock Settings"},
     {"doctype": "Workflow"},
     {"doctype": "Workflow State"},
     {"doctype": "Workflow Action"},
+
+     {
+        "doctype": "Notification",
+        "filters": [
+            ["is_standard", "=", "No"]
+        ]
+    },
 
     # --- Custom Reports ---
     {
