@@ -70,7 +70,13 @@ fixtures = [
     },
     {"doctype": "Custom Role"},  # optional (custom roles)
 ]
-
+scheduler_events = {
+    "cron": {
+        "* * * * *": [  # every 1 minute
+            "my_custom_app.tasks.auto_send_emails.send_all_pending_emails"
+        ]
+    }
+}
 # Apps
 # ------------------
 
