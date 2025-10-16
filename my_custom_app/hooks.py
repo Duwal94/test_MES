@@ -35,6 +35,7 @@ fixtures = [
     {"doctype": "Custom DocPerm"},
     {"doctype": "Server Script"},
     {"doctype": "Client Script"},
+    {"doctype": "Notification"},
     {"doctype": "Workflow"},
     {"doctype": "Workflow State"},
     {"doctype": "Workflow Action"},
