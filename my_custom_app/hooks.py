@@ -36,6 +36,7 @@ fixtures = [
     {"doctype": "Server Script"},
     {"doctype": "Client Script"},
     {"doctype": "Notification"},
+    {"doctype": "Stock Settings"},
     {"doctype": "Workflow"},
     {"doctype": "Workflow State"},
     {"doctype": "Workflow Action"},
