@@ -197051,5 +197051,92 @@
    }
   ],
   "timeout": 0
+ },
+ {
+  "add_total_row": 0,
+  "add_translate_data": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [
+   {
+    "default": "Factory-WIP - SYN",
+    "fieldname": "warehouse",
+    "fieldtype": "Link",
+    "label": "Warehouse",
+    "mandatory": 0,
+    "options": "Warehouse",
+    "parent": "Warehouse Summary Report",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": "All Item Groups",
+    "fieldname": "item_group",
+    "fieldtype": "Link",
+    "label": "Item Group",
+    "mandatory": 0,
+    "options": "Item Group",
+    "parent": "Warehouse Summary Report",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   }
+  ],
+  "is_standard": "No",
+  "javascript": null,
+  "json": "{}",
+  "letter_head": null,
+  "modified": "2025-10-19 14:45:43.066256",
+  "module": "Stock",
+  "name": "Warehouse Summary Report",
+  "prepared_report": 0,
+  "query": "SELECT\r\n    bin.item_code AS \"Item Code:Link/Item:150\",\r\n    bin.actual_qty AS \"Actual Quantity:Float:120\"\r\nFROM\r\n    `tabBin` bin\r\nJOIN\r\n    `tabItem` item ON bin.item_code = item.name\r\nWHERE\r\n    bin.warehouse = %(warehouse)s\r\n    AND (\r\n        COALESCE(%(item_group)s, '') = ''\r\n        OR %(item_group)s = 'All Item Groups'\r\n        OR item.item_group IN (\r\n            SELECT ig.name\r\n            FROM `tabItem Group` ig\r\n            WHERE ig.lft >= (SELECT ig2.lft FROM `tabItem Group` ig2 WHERE ig2.name = %(item_group)s)\r\n              AND ig.rgt <= (SELECT ig3.rgt FROM `tabItem Group` ig3 WHERE ig3.name = %(item_group)s)\r\n        )\r\n    )\r\nORDER BY\r\n    bin.item_code ASC;",
+  "ref_doctype": "Warehouse",
+  "reference_report": null,
+  "report_name": "Warehouse Summary Report",
+  "report_script": "",
+  "report_type": "Query Report",
+  "roles": [
+   {
+    "parent": "Warehouse Summary Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Item Manager"
+   },
+   {
+    "parent": "Warehouse Summary Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Stock User"
+   },
+   {
+    "parent": "Warehouse Summary Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Sales User"
+   },
+   {
+    "parent": "Warehouse Summary Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Purchase User"
+   },
+   {
+    "parent": "Warehouse Summary Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts User"
+   },
+   {
+    "parent": "Warehouse Summary Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Manufacturing User"
+   }
+  ],
+  "timeout": 0
  }
 ]

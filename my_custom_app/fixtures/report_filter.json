@@ -131088,6 +131088,22 @@
   "wildcard_filter": 0
  },
  {
+  "default": "Factory-WIP - SYN",
+  "docstatus": 0,
+  "doctype": "Report Filter",
+  "fieldname": "warehouse",
+  "fieldtype": "Link",
+  "label": "Warehouse",
+  "mandatory": 0,
+  "modified": "2025-10-19 14:45:43.066256",
+  "name": "2r586f98jd",
+  "options": "Warehouse",
+  "parent": "Warehouse Summary Report",
+  "parentfield": "filters",
+  "parenttype": "Report",
+  "wildcard_filter": 0
+ },
+ {
   "default": null,
   "docstatus": 0,
   "doctype": "Report Filter",
@@ -131099,6 +131115,22 @@
   "name": "8ir00ens9p",
   "options": null,
   "parent": "Stitching With Date Filter",
+  "parentfield": "filters",
+  "parenttype": "Report",
+  "wildcard_filter": 0
+ },
+ {
+  "default": "All Item Groups",
+  "docstatus": 0,
+  "doctype": "Report Filter",
+  "fieldname": "item_group",
+  "fieldtype": "Link",
+  "label": "Item Group",
+  "mandatory": 0,
+  "modified": "2025-10-19 14:45:43.066256",
+  "name": "2r52trpfl9",
+  "options": "Item Group",
+  "parent": "Warehouse Summary Report",
   "parentfield": "filters",
   "parenttype": "Report",
   "wildcard_filter": 0

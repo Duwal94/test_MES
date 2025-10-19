@@ -337,7 +337,7 @@
     "type": "Link"
    }
   ],
-  "modified": "2025-09-21 11:54:38.053180",
+  "modified": "2025-10-19 14:52:51.356748",
   "module": "Setup",
   "name": "Home",
   "number_cards": [],
@@ -363,7 +363,7 @@
     "restrict_to_domain": null,
     "stats_filter": null,
     "type": "URL",
-    "url": "http://localhost:8080/daily_report"
+    "url": "/daily_report"
    },
    {
     "color": "Grey",
@@ -380,7 +380,7 @@
     "restrict_to_domain": null,
     "stats_filter": null,
     "type": "URL",
-    "url": "http://localhost:8080/manu_report"
+    "url": "/manu_report"
    },
    {
     "color": null,
