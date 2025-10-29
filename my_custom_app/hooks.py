@@ -46,6 +46,12 @@ fixtures = [
             ["is_standard", "=", "No"]
         ]
     },
+     {
+        "doctype": "Print Format",
+        "filters": [
+            ["standard", "=", "No"]
+        ]
+    },
 
     # --- Custom Reports ---
     {

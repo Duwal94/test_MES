@@ -90,12 +90,12 @@
  {
   "docstatus": 0,
   "doctype": "Client Script",
-  "dt": "Account",
-  "enabled": 1,
-  "modified": "2025-10-12 14:43:39.713724",
+  "dt": "Production Plan",
+  "enabled": 0,
+  "modified": "2025-10-28 11:44:02.670269",
   "module": null,
-  "name": "fsdgsdfgdfsgdf",
-  "script": "frappe.ui.form.on('Account', {\n\trefresh(frm) {\n\t\t// your code here\n\t}\n})",
+  "name": "Fixed Rate",
+  "script": "// ===========================\r\n// Auto-fill stitching rate from Item\r\n// ===========================\r\nfrappe.ui.form.on(\"Stitching Entry\", {\r\n    item: function(frm, cdt, cdn) {\r\n        let row = locals[cdt][cdn];\r\n        if (!row.item) return;\r\n\r\n        // Fetch custom_fixed_rate from Item master\r\n        frappe.db.get_value(\"Item\", row.item, \"custom_fixed_rate\")\r\n            .then(r => {\r\n                if (r && r.message && r.message.custom_fixed_rate) {\r\n                    frappe.model.set_value(cdt, cdn, \"rate\", r.message.custom_fixed_rate);\r\n                } else {\r\n                    frappe.model.set_value(cdt, cdn, \"rate\", 0);\r\n                }\r\n            });\r\n    },\r\n});\r\n",
   "view": "Form"
  }
 ]
