@@ -2791,5 +2791,551 @@
   "status": "Completed",
   "user": null,
   "workflow_state": "Pending"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Sales User",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2025-10-30 11:32:38.874348",
+  "name": "luco0fusu2",
+  "permitted_roles": [
+   {
+    "parent": "luco0fusu2",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Sales User"
+   }
+  ],
+  "reference_doctype": "Sales Order",
+  "reference_name": "SAL-ORD-2025-00068",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Draft"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Sales Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2025-10-30 11:33:20.739856",
+  "name": "mbftmlnpvq",
+  "permitted_roles": [
+   {
+    "parent": "mbftmlnpvq",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Sales Manager"
+   }
+  ],
+  "reference_doctype": "Sales Order",
+  "reference_name": "SAL-ORD-2025-00068",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Sales User",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2025-10-30 11:59:21.745855",
+  "name": "5j9gaunpjc",
+  "permitted_roles": [
+   {
+    "parent": "5j9gaunpjc",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Sales User"
+   }
+  ],
+  "reference_doctype": "Sales Order",
+  "reference_name": "SAL-ORD-2025-00069",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Draft"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Sales Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2025-10-30 11:59:24.914689",
+  "name": "5k9lspq9ca",
+  "permitted_roles": [
+   {
+    "parent": "5k9lspq9ca",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Sales Manager"
+   }
+  ],
+  "reference_doctype": "Sales Order",
+  "reference_name": "SAL-ORD-2025-00069",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Sales User",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2025-10-30 12:15:24.686729",
+  "name": "f06q3rt9ue",
+  "permitted_roles": [
+   {
+    "parent": "f06q3rt9ue",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Sales User"
+   }
+  ],
+  "reference_doctype": "Sales Order",
+  "reference_name": "SAL-ORD-2025-00070",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Draft"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Sales Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2025-10-30 12:18:23.121580",
+  "name": "gnvg3t4t9f",
+  "permitted_roles": [
+   {
+    "parent": "gnvg3t4t9f",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Sales Manager"
+   }
+  ],
+  "reference_doctype": "Sales Order",
+  "reference_name": "SAL-ORD-2025-00070",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Sales User",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2025-10-30 12:25:04.387443",
+  "name": "klb1s9dqfe",
+  "permitted_roles": [
+   {
+    "parent": "klb1s9dqfe",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Sales User"
+   }
+  ],
+  "reference_doctype": "Sales Order",
+  "reference_name": "SAL-ORD-2025-00070-1",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Draft"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Sales Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2025-10-30 12:25:06.470491",
+  "name": "km0b5oeaf5",
+  "permitted_roles": [
+   {
+    "parent": "km0b5oeaf5",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Sales Manager"
+   }
+  ],
+  "reference_doctype": "Sales Order",
+  "reference_name": "SAL-ORD-2025-00070-1",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Sales User",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2025-10-30 12:30:43.113043",
+  "name": "nv7502m32o",
+  "permitted_roles": [
+   {
+    "parent": "nv7502m32o",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Sales User"
+   }
+  ],
+  "reference_doctype": "Sales Order",
+  "reference_name": "SAL-ORD-2025-00071",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Draft"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Sales Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2025-10-30 12:30:48.870100",
+  "name": "o10cdides8",
+  "permitted_roles": [
+   {
+    "parent": "o10cdides8",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Sales Manager"
+   }
+  ],
+  "reference_doctype": "Sales Order",
+  "reference_name": "SAL-ORD-2025-00071",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Sales User",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2025-10-30 13:38:56.404422",
+  "name": "vucln854jc",
+  "permitted_roles": [
+   {
+    "parent": "vucln854jc",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Sales User"
+   }
+  ],
+  "reference_doctype": "Sales Order",
+  "reference_name": "SAL-ORD-2025-00072",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Draft"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Sales Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2025-10-30 13:39:01.997434",
+  "name": "0048jc074v",
+  "permitted_roles": [
+   {
+    "parent": "0048jc074v",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Sales Manager"
+   }
+  ],
+  "reference_doctype": "Sales Order",
+  "reference_name": "SAL-ORD-2025-00072",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Sales User",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2025-10-30 14:20:39.871689",
+  "name": "ocm55tlhu4",
+  "permitted_roles": [
+   {
+    "parent": "ocm55tlhu4",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Sales User"
+   }
+  ],
+  "reference_doctype": "Sales Order",
+  "reference_name": "SAL-ORD-2025-00073",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Draft"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2025-10-30 14:21:01.572432",
+  "name": "ojfpavoub1",
+  "permitted_roles": [
+   {
+    "parent": "ojfpavoub1",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Sales Manager"
+   }
+  ],
+  "reference_doctype": "Sales Order",
+  "reference_name": "SAL-ORD-2025-00073",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Pending"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Sales User",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2025-10-30 14:23:07.216935",
+  "name": "pqo7ohg8fj",
+  "permitted_roles": [
+   {
+    "parent": "pqo7ohg8fj",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Sales User"
+   }
+  ],
+  "reference_doctype": "Sales Order",
+  "reference_name": "SAL-ORD-2025-00074",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Draft"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Sales Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2025-10-30 14:24:00.205320",
+  "name": "qbalv7n749",
+  "permitted_roles": [
+   {
+    "parent": "qbalv7n749",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Sales Manager"
+   }
+  ],
+  "reference_doctype": "Sales Order",
+  "reference_name": "SAL-ORD-2025-00074",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Sales User",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2025-10-30 14:24:39.909887",
+  "name": "qnn8too71f",
+  "permitted_roles": [
+   {
+    "parent": "qnn8too71f",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Sales User"
+   }
+  ],
+  "reference_doctype": "Sales Order",
+  "reference_name": "SAL-ORD-2025-00075",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Draft"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Sales Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2025-10-30 14:24:42.426288",
+  "name": "qog8mevnt6",
+  "permitted_roles": [
+   {
+    "parent": "qog8mevnt6",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Sales Manager"
+   }
+  ],
+  "reference_doctype": "Sales Order",
+  "reference_name": "SAL-ORD-2025-00075",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Sales User",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2025-10-30 14:25:55.635368",
+  "name": "rfc0tv5o93",
+  "permitted_roles": [
+   {
+    "parent": "rfc0tv5o93",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Sales User"
+   }
+  ],
+  "reference_doctype": "Sales Order",
+  "reference_name": "SAL-ORD-2025-00076",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Draft"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Sales Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2025-10-30 14:26:01.570776",
+  "name": "rh7j167vr4",
+  "permitted_roles": [
+   {
+    "parent": "rh7j167vr4",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Sales Manager"
+   }
+  ],
+  "reference_doctype": "Sales Order",
+  "reference_name": "SAL-ORD-2025-00076",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Sales User",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2025-10-30 14:27:24.364045",
+  "name": "sb3endp605",
+  "permitted_roles": [
+   {
+    "parent": "sb3endp605",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Sales User"
+   }
+  ],
+  "reference_doctype": "Sales Order",
+  "reference_name": "SAL-ORD-2025-00077",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Draft"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Sales Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2025-10-30 14:27:26.557377",
+  "name": "sbpqgptjrt",
+  "permitted_roles": [
+   {
+    "parent": "sbpqgptjrt",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Sales Manager"
+   }
+  ],
+  "reference_doctype": "Sales Order",
+  "reference_name": "SAL-ORD-2025-00077",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Sales User",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2025-10-30 14:50:52.444329",
+  "name": "a34s1b34vt",
+  "permitted_roles": [
+   {
+    "parent": "a34s1b34vt",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Sales User"
+   }
+  ],
+  "reference_doctype": "Sales Order",
+  "reference_name": "SAL-ORD-2025-00078",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Draft"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Sales Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2025-10-30 14:51:26.053209",
+  "name": "adkphb0jov",
+  "permitted_roles": [
+   {
+    "parent": "adkphb0jov",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Sales Manager"
+   }
+  ],
+  "reference_doctype": "Sales Order",
+  "reference_name": "SAL-ORD-2025-00078",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Sales User",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2025-10-30 14:51:58.418361",
+  "name": "anoqocl88q",
+  "permitted_roles": [
+   {
+    "parent": "anoqocl88q",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Sales User"
+   }
+  ],
+  "reference_doctype": "Sales Order",
+  "reference_name": "SAL-ORD-2025-00079",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Draft"
+ },
+ {
+  "completed_by": "Administrator",
+  "completed_by_role": "Sales Manager",
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2025-10-30 14:52:01.023209",
+  "name": "aoibsou2rg",
+  "permitted_roles": [
+   {
+    "parent": "aoibsou2rg",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Sales Manager"
+   }
+  ],
+  "reference_doctype": "Sales Order",
+  "reference_name": "SAL-ORD-2025-00079",
+  "status": "Completed",
+  "user": null,
+  "workflow_state": "Pending"
  }
 ]

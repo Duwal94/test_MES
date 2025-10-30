@@ -9,11 +9,11 @@
   "filters": [
    {
     "default": "Today",
-    "fieldname": "from_date",
+    "fieldname": "to_date",
     "fieldtype": "Date",
-    "label": "From Date",
+    "label": "To Date",
     "mandatory": 0,
-    "options": "From Date",
+    "options": "To Date",
     "parent": "Stitching Work Today",
     "parentfield": "filters",
     "parenttype": "Report",
@@ -21,11 +21,11 @@
    },
    {
     "default": "Today",
-    "fieldname": "to_date",
+    "fieldname": "from_date",
     "fieldtype": "Date",
-    "label": "To Date",
+    "label": "From Date",
     "mandatory": 0,
-    "options": "To Date",
+    "options": "From Date",
     "parent": "Stitching Work Today",
     "parentfield": "filters",
     "parenttype": "Report",
@@ -36,7 +36,7 @@
   "javascript": null,
   "json": null,
   "letter_head": null,
-  "modified": "2025-10-28 11:20:46.718615",
+  "modified": "2025-10-29 12:50:26.425200",
   "module": "Manufacturing",
   "name": "Stitching Work Today",
   "prepared_report": 0,
@@ -46,7 +46,20 @@
   "report_name": "Stitching Work Today",
   "report_script": "",
   "report_type": "Query Report",
-  "roles": [],
+  "roles": [
+   {
+    "parent": "Stitching Work Today",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Manufacturing User"
+   },
+   {
+    "parent": "Stitching Work Today",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Manufacturer"
+   }
+  ],
   "timeout": 0
  },
  {
@@ -59,11 +72,11 @@
   "filters": [
    {
     "default": "Today",
-    "fieldname": "from_date",
+    "fieldname": "to_date",
     "fieldtype": "Date",
-    "label": "From Date",
+    "label": "To Date",
     "mandatory": 0,
-    "options": "From Date",
+    "options": "To Date",
     "parent": "Cutting Section",
     "parentfield": "filters",
     "parenttype": "Report",
@@ -71,11 +84,11 @@
    },
    {
     "default": "Today",
-    "fieldname": "to_date",
+    "fieldname": "from_date",
     "fieldtype": "Date",
-    "label": "To Date",
+    "label": "From Date",
     "mandatory": 0,
-    "options": "To Date",
+    "options": "From Date",
     "parent": "Cutting Section",
     "parentfield": "filters",
     "parenttype": "Report",
@@ -86,7 +99,7 @@
   "javascript": null,
   "json": null,
   "letter_head": null,
-  "modified": "2025-10-28 11:18:48.049090",
+  "modified": "2025-10-29 12:49:32.314556",
   "module": "Stock",
   "name": "Cutting Section",
   "prepared_report": 0,
@@ -149,7 +162,7 @@
   "javascript": null,
   "json": null,
   "letter_head": null,
-  "modified": "2025-10-28 11:16:22.391654",
+  "modified": "2025-10-29 12:49:14.291666",
   "module": "Stock",
   "name": "Quilting Section",
   "prepared_report": 0,
@@ -212,7 +225,7 @@
   "javascript": null,
   "json": null,
   "letter_head": null,
-  "modified": "2025-10-28 11:14:04.734315",
+  "modified": "2025-10-29 12:48:49.696616",
   "module": "Stock",
   "name": "Pillow Section",
   "prepared_report": 0,
@@ -275,7 +288,7 @@
   "javascript": null,
   "json": null,
   "letter_head": null,
-  "modified": "2025-10-28 11:11:29.529465",
+  "modified": "2025-10-29 12:48:20.810074",
   "module": "Manufacturing",
   "name": "Stitching With Date Filter",
   "prepared_report": 0,
@@ -285,7 +298,20 @@
   "report_name": "Stitching With Date Filter",
   "report_script": "",
   "report_type": "Query Report",
-  "roles": [],
+  "roles": [
+   {
+    "parent": "Stitching With Date Filter",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Manufacturing User"
+   },
+   {
+    "parent": "Stitching With Date Filter",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Manufacturer"
+   }
+  ],
   "timeout": 0
  },
  {
@@ -325,7 +351,7 @@
   "javascript": null,
   "json": null,
   "letter_head": null,
-  "modified": "2025-10-28 11:05:01.511354",
+  "modified": "2025-10-29 12:47:56.249501",
   "module": "Selling",
   "name": "Pending Report",
   "prepared_report": 0,
@@ -394,7 +420,7 @@
   "javascript": null,
   "json": null,
   "letter_head": null,
-  "modified": "2025-10-28 11:02:50.976693",
+  "modified": "2025-10-29 12:47:36.741082",
   "module": "Selling",
   "name": "Dispatch Report",
   "prepared_report": 0,
@@ -436,11 +462,11 @@
   "filters": [
    {
     "default": "Today",
-    "fieldname": "to_date",
+    "fieldname": "from_date",
     "fieldtype": "Date",
-    "label": "To Date",
+    "label": "From Date",
     "mandatory": 0,
-    "options": "To Date",
+    "options": "From Date",
     "parent": "To Be Manufactured for Delivery",
     "parentfield": "filters",
     "parenttype": "Report",
@@ -448,11 +474,11 @@
    },
    {
     "default": "Today",
-    "fieldname": "from_date",
+    "fieldname": "to_date",
     "fieldtype": "Date",
-    "label": "From Date",
+    "label": "To Date",
     "mandatory": 0,
-    "options": "From Date",
+    "options": "To Date",
     "parent": "To Be Manufactured for Delivery",
     "parentfield": "filters",
     "parenttype": "Report",
@@ -463,7 +489,7 @@
   "javascript": null,
   "json": null,
   "letter_head": null,
-  "modified": "2025-10-28 10:59:04.737714",
+  "modified": "2025-10-29 12:46:20.419261",
   "module": "Selling",
   "name": "To Be Manufactured for Delivery",
   "prepared_report": 0,
@@ -504,74 +530,17 @@
   "doctype": "Report",
   "filters": [
    {
-    "default": "Today",
-    "fieldname": "from_date",
-    "fieldtype": "Date",
-    "label": "From Date",
+    "default": "All Item Groups",
+    "fieldname": "item_group",
+    "fieldtype": "Link",
+    "label": "Item Group",
     "mandatory": 0,
-    "options": "From Date",
-    "parent": "Partial Dispatch Report",
+    "options": "Item Group",
+    "parent": "Warehouse Summary Report",
     "parentfield": "filters",
     "parenttype": "Report",
     "wildcard_filter": 0
    },
-   {
-    "default": "Today",
-    "fieldname": "to_date",
-    "fieldtype": "Date",
-    "label": "To Date",
-    "mandatory": 0,
-    "options": "To Date",
-    "parent": "Partial Dispatch Report",
-    "parentfield": "filters",
-    "parenttype": "Report",
-    "wildcard_filter": 0
-   }
-  ],
-  "is_standard": "No",
-  "javascript": null,
-  "json": null,
-  "letter_head": null,
-  "modified": "2025-10-28 10:55:50.492886",
-  "module": "Selling",
-  "name": "Partial Dispatch Report",
-  "prepared_report": 0,
-  "query": "SELECT\r\n    so.transaction_date AS \"Date:Date:100\",\r\n    so.customer AS \"Customer:Link/Customer:150\",\r\n    soi.item_code AS \"Item:Link/Item:120\",\r\n    soi.qty AS \"Ordered Qty:Float:100\",\r\n    soi.delivered_qty AS \"Delivered Qty:Float:100\",\r\n    (soi.qty - soi.delivered_qty) AS \"Pending Qty:Float:100\",\r\n    so.status AS \"Order Status:Data:120\"\r\nFROM\r\n    `tabSales Order Item` soi\r\nJOIN\r\n    `tabSales Order` so ON soi.parent = so.name\r\nWHERE\r\n    so.docstatus = 1\r\n    AND so.status NOT IN ('Closed', 'Cancelled')\r\n    AND soi.delivered_qty > 0\r\n    AND soi.delivered_qty < soi.qty\r\n    AND so.transaction_date BETWEEN %(from_date)s AND %(to_date)s\r\nORDER BY\r\n    so.transaction_date DESC, so.name;\r\n",
-  "ref_doctype": "Sales Order",
-  "reference_report": null,
-  "report_name": "Partial Dispatch Report",
-  "report_script": null,
-  "report_type": "Query Report",
-  "roles": [
-   {
-    "parent": "Partial Dispatch Report",
-    "parentfield": "roles",
-    "parenttype": "Report",
-    "role": "Sales User"
-   },
-   {
-    "parent": "Partial Dispatch Report",
-    "parentfield": "roles",
-    "parenttype": "Report",
-    "role": "Sales Manager"
-   },
-   {
-    "parent": "Partial Dispatch Report",
-    "parentfield": "roles",
-    "parenttype": "Report",
-    "role": "Stock User"
-   }
-  ],
-  "timeout": 0
- },
- {
-  "add_total_row": 0,
-  "add_translate_data": 0,
-  "columns": [],
-  "disabled": 0,
-  "docstatus": 0,
-  "doctype": "Report",
-  "filters": [
    {
     "default": "Factory-WIP - SYN",
     "fieldname": "warehouse",
@@ -579,18 +548,6 @@
     "label": "Warehouse",
     "mandatory": 0,
     "options": "Warehouse",
-    "parent": "Warehouse Summary Report",
-    "parentfield": "filters",
-    "parenttype": "Report",
-    "wildcard_filter": 0
-   },
-   {
-    "default": "All Item Groups",
-    "fieldname": "item_group",
-    "fieldtype": "Link",
-    "label": "Item Group",
-    "mandatory": 0,
-    "options": "Item Group",
     "parent": "Warehouse Summary Report",
     "parentfield": "filters",
     "parenttype": "Report",
@@ -625,7 +582,7 @@
   "javascript": null,
   "json": "{}",
   "letter_head": null,
-  "modified": "2025-10-28 10:52:01.770571",
+  "modified": "2025-10-29 12:31:11.430142",
   "module": "Stock",
   "name": "Warehouse Summary Report",
   "prepared_report": 0,
@@ -647,6 +604,87 @@
     "parentfield": "roles",
     "parenttype": "Report",
     "role": "Sales User"
+   }
+  ],
+  "timeout": 0
+ },
+ {
+  "add_total_row": 0,
+  "add_translate_data": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [
+   {
+    "default": "Today",
+    "fieldname": "from_date",
+    "fieldtype": "Date",
+    "label": "From Date",
+    "mandatory": 0,
+    "options": "From Date",
+    "parent": "Partial Dispatch Report",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": "Today",
+    "fieldname": "to_date",
+    "fieldtype": "Date",
+    "label": "To Date",
+    "mandatory": 0,
+    "options": "To Date",
+    "parent": "Partial Dispatch Report",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   }
+  ],
+  "is_standard": "No",
+  "javascript": null,
+  "json": null,
+  "letter_head": null,
+  "modified": "2025-10-29 12:41:36.124665",
+  "module": "Selling",
+  "name": "Partial Dispatch Report",
+  "prepared_report": 0,
+  "query": "SELECT\r\n    so.transaction_date AS \"Date:Date:100\",\r\n    so.customer AS \"Customer:Link/Customer:150\",\r\n    soi.item_code AS \"Item:Link/Item:120\",\r\n    soi.qty AS \"Ordered Qty:Float:100\",\r\n    soi.delivered_qty AS \"Delivered Qty:Float:100\",\r\n    (soi.qty - soi.delivered_qty) AS \"Pending Qty:Float:100\",\r\n    so.status AS \"Order Status:Data:120\"\r\nFROM\r\n    `tabSales Order Item` soi\r\nJOIN\r\n    `tabSales Order` so ON soi.parent = so.name\r\nWHERE\r\n    so.docstatus = 1\r\n    AND so.status NOT IN ('Closed', 'Cancelled')\r\n    AND soi.delivered_qty > 0\r\n    AND soi.delivered_qty < soi.qty\r\n    AND so.transaction_date BETWEEN %(from_date)s AND %(to_date)s\r\nORDER BY\r\n    so.transaction_date DESC, so.name;\r\n",
+  "ref_doctype": "Sales Order",
+  "reference_report": null,
+  "report_name": "Partial Dispatch Report",
+  "report_script": null,
+  "report_type": "Query Report",
+  "roles": [
+   {
+    "parent": "Partial Dispatch Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts User"
+   },
+   {
+    "parent": "Partial Dispatch Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Maintenance User"
+   },
+   {
+    "parent": "Partial Dispatch Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Sales User"
+   },
+   {
+    "parent": "Partial Dispatch Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Stock User"
+   },
+   {
+    "parent": "Partial Dispatch Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Sales Manager"
    }
   ],
   "timeout": 0
