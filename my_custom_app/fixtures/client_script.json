@@ -2,6 +2,28 @@
  {
   "docstatus": 0,
   "doctype": "Client Script",
+  "dt": "Delivery Note",
+  "enabled": 1,
+  "modified": "2025-11-03 15:22:04.191697",
+  "module": null,
+  "name": "Sales Order- Sales Return",
+  "script": "frappe.ui.form.on('Delivery Note', {\r\n    refresh: function(frm) {\r\n        // Remove default \"Sales Return\" button from Create dropdown\r\n        frm.remove_custom_button('Sales Return', 'Create');\r\n\r\n        // Check if a Sales Return already exists for this Delivery Note\r\n        let has_return = frm.doc.return_against ? true : false;\r\n\r\n        // Only add the button if submitted and no return exists\r\n        if (frm.doc.docstatus === 1 && !has_return) {\r\n            frm.add_custom_button(__('Sales Return'), function() {\r\n                frappe.model.open_mapped_doc({\r\n                    method: 'erpnext.stock.doctype.delivery_note.delivery_note.make_sales_return',\r\n                    frm: frm\r\n                });\r\n            });\r\n        }\r\n    }\r\n});\r\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Delivery Note",
+  "enabled": 1,
+  "modified": "2025-11-03 15:02:27.524997",
+  "module": null,
+  "name": "Remove View and Create button",
+  "script": "frappe.ui.form.on('Delivery Note', {\r\n    refresh: function(frm) {\r\n        // Remove \"Create\" dropdown completely\r\n        frm.page.remove_menu_item(__('Create'));\r\n\r\n        // Remove \"View\" dropdown completely\r\n        frm.page.remove_menu_item(__('View'));\r\n\r\n        // Optional: add a custom \"Sales Return\" button\r\n        if (frm.doc.docstatus === 1) {\r\n            frm.add_custom_button(__('Sales Return'), function() {\r\n                frappe.model.open_mapped_doc({\r\n                    method: 'erpnext.stock.doctype.delivery_note.delivery_note.make_sales_return',\r\n                    frm: frm\r\n                });\r\n            });\r\n        }\r\n    },\r\n\r\n    // Keep toolbar updated on submit or cancel\r\n    on_submit: function(frm) {\r\n        frm.trigger('refresh');\r\n    },\r\n    on_cancel: function(frm) {\r\n        frm.trigger('refresh');\r\n    }\r\n});\r\n",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
   "dt": "Production Plan",
   "enabled": 1,
   "modified": "2025-08-31 21:02:47.848784",
