@@ -3,53 +3,58 @@ from frappe.utils import today
 from frappe.desk.query_report import run
 
 @frappe.whitelist()
-def get_reports_manu(from_date=None, to_date=None):
-    # Step 1: Ensure default dates
+def get_manufacturing_reports(from_date=None, to_date=None):
+    """Fetch manufacturing-related reports with enforced date filters."""
+    
+    # Step 1: Default to today's date if not provided
     from_date = str(from_date) if from_date else today()
     to_date = str(to_date) if to_date else today()
 
-    # Step 2: Always start with a proper dict mapping
+    # Step 2: Base date filters
     date_filters = {"from_date": from_date, "to_date": to_date}
 
+    # Step 3: Manufacturing reports mapping
     reports = {
         "partial_dispatch": "Partial Dispatch Report",
-        "to_be_manufactured": "To Be Manufactured for Delivery"
-      
+        "to_be_manufactured": "To Be Manufactured for Delivery",
     }
 
     output = {}
 
+    # Step 4: Iterate through reports
     for key, report_name in reports.items():
         try:
-            # Get the report doc
+            # Fetch the report document
             report_doc = frappe.get_doc("Report", report_name)
 
-            # Step 3: Initialize filters as a dict
+            # Initialize filters
             filters = date_filters.copy()
 
-            # Step 4: Check if the report is a query report
+            # Step 5: Handle Query Reports specifically
             if getattr(report_doc, "report_type", None) == "Query Report":
                 query = getattr(report_doc, "query", "") or ""
-                # Only use date_filters if placeholders exist in the query
+                # Use date filters only if placeholders exist
                 if "%(from_date)" not in query or "%(to_date)" not in query:
                     filters = {}
 
-            # Step 5: Force known reports to use date filters
-            if report_name in ["Stitching Work Today", "Cutting Section", "Dispatch Report"]:
+            # Step 6: Enforce date filters for known manufacturing reports
+            if report_name in [
+                "Partial Dispatch Report",
+                "To Be Manufactured for Delivery",
+            ]:
                 filters = {**date_filters, **filters}
 
-            # Step 6: Ultimate safety net
+            # Step 7: Validate filters
             if not isinstance(filters, dict):
                 filters = date_filters.copy()
 
-            # Step 7: Ensure keys exist with valid values
             filters["from_date"] = filters.get("from_date") or today()
             filters["to_date"] = filters.get("to_date") or today()
 
-            # Step 8: Run the report
+            # Step 8: Execute report
             result = run(report_name, filters=filters)
 
-            # Step 9: Store output
+            # Step 9: Store result
             output[key] = {
                 "columns": result.get("columns", []),
                 "result": result.get("result", []),
@@ -67,3 +72,4 @@ def get_reports_manu(from_date=None, to_date=None):
             }
 
     return output
+
