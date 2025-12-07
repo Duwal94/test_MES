@@ -4114,5 +4114,47 @@
   "status": "Completed",
   "user": null,
   "workflow_state": "Pending"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2025-11-30 17:32:17.753190",
+  "name": "ktpd6plq9p",
+  "permitted_roles": [
+   {
+    "parent": "ktpd6plq9p",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Sales User"
+   }
+  ],
+  "reference_doctype": "Sales Order",
+  "reference_name": "SAL-ORD-2025-00099",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Draft"
+ },
+ {
+  "completed_by": null,
+  "completed_by_role": null,
+  "docstatus": 0,
+  "doctype": "Workflow Action",
+  "modified": "2025-12-07 15:11:29.807632",
+  "name": "klqaio0k4p",
+  "permitted_roles": [
+   {
+    "parent": "klqaio0k4p",
+    "parentfield": "permitted_roles",
+    "parenttype": "Workflow Action",
+    "role": "Sales User"
+   }
+  ],
+  "reference_doctype": "Sales Order",
+  "reference_name": "SAL-ORD-2025-00100",
+  "status": "Open",
+  "user": null,
+  "workflow_state": "Draft"
  }
 ]

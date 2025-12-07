@@ -329,75 +329,6 @@
     "label": "From Date",
     "mandatory": 0,
     "options": "From Date",
-    "parent": "Pending Report",
-    "parentfield": "filters",
-    "parenttype": "Report",
-    "wildcard_filter": 0
-   },
-   {
-    "default": "Today",
-    "fieldname": "to_date",
-    "fieldtype": "Date",
-    "label": "To Date",
-    "mandatory": 0,
-    "options": "To Date",
-    "parent": "Pending Report",
-    "parentfield": "filters",
-    "parenttype": "Report",
-    "wildcard_filter": 0
-   }
-  ],
-  "is_standard": "No",
-  "javascript": null,
-  "json": null,
-  "letter_head": null,
-  "modified": "2025-11-05 13:37:32.444065",
-  "module": "Selling",
-  "name": "Pending Report",
-  "prepared_report": 0,
-  "query": "SELECT\r\n    so.name AS \"Sales Order:Link/Sales Order:120\",\r\n    so.customer AS \"Customer:Link/Customer:180\",\r\n    so.transaction_date AS \"Order Date:Date:100\",\r\n    so.workflow_state AS \"Workflow State::150\",\r\n    so.owner AS \"Owner::120\"\r\nFROM\r\n    `tabSales Order` so\r\nWHERE\r\n    so.docstatus < 2\r\n    AND so.workflow_state = 'Pending'\r\n    AND so.transaction_date BETWEEN %(from_date)s AND %(to_date)s\r\nORDER BY\r\n    so.transaction_date DESC, so.name DESC;\r\n",
-  "ref_doctype": "Sales Order",
-  "reference_report": null,
-  "report_name": "Pending Report",
-  "report_script": null,
-  "report_type": "Query Report",
-  "roles": [
-   {
-    "parent": "Pending Report",
-    "parentfield": "roles",
-    "parenttype": "Report",
-    "role": "Sales User"
-   },
-   {
-    "parent": "Pending Report",
-    "parentfield": "roles",
-    "parenttype": "Report",
-    "role": "Sales Manager"
-   },
-   {
-    "parent": "Pending Report",
-    "parentfield": "roles",
-    "parenttype": "Report",
-    "role": "Stock User"
-   }
-  ],
-  "timeout": 0
- },
- {
-  "add_total_row": 0,
-  "add_translate_data": 0,
-  "columns": [],
-  "disabled": 0,
-  "docstatus": 0,
-  "doctype": "Report",
-  "filters": [
-   {
-    "default": "Today",
-    "fieldname": "from_date",
-    "fieldtype": "Date",
-    "label": "From Date",
-    "mandatory": 0,
-    "options": "From Date",
     "parent": "Dispatch Report",
     "parentfield": "filters",
     "parenttype": "Report",
@@ -420,7 +351,7 @@
   "javascript": null,
   "json": null,
   "letter_head": null,
-  "modified": "2025-11-05 13:37:24.245983",
+  "modified": "2025-11-28 12:13:14.154416",
   "module": "Selling",
   "name": "Dispatch Report",
   "prepared_report": 0,
@@ -435,12 +366,6 @@
     "parent": "Dispatch Report",
     "parentfield": "roles",
     "parenttype": "Report",
-    "role": "Stock User"
-   },
-   {
-    "parent": "Dispatch Report",
-    "parentfield": "roles",
-    "parenttype": "Report",
     "role": "Stock Manager"
    },
    {
@@ -448,6 +373,12 @@
     "parentfield": "roles",
     "parenttype": "Report",
     "role": "Sales User"
+   },
+   {
+    "parent": "Dispatch Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Stock User"
    }
   ],
   "timeout": 0
@@ -459,64 +390,27 @@
   "disabled": 0,
   "docstatus": 0,
   "doctype": "Report",
-  "filters": [
-   {
-    "default": "Today",
-    "fieldname": "from_date",
-    "fieldtype": "Date",
-    "label": "From Date",
-    "mandatory": 0,
-    "options": "From Date",
-    "parent": "To Be Manufactured for Delivery",
-    "parentfield": "filters",
-    "parenttype": "Report",
-    "wildcard_filter": 0
-   },
-   {
-    "default": "Today",
-    "fieldname": "to_date",
-    "fieldtype": "Date",
-    "label": "To Date",
-    "mandatory": 0,
-    "options": "To Date",
-    "parent": "To Be Manufactured for Delivery",
-    "parentfield": "filters",
-    "parenttype": "Report",
-    "wildcard_filter": 0
-   }
-  ],
+  "filters": [],
   "is_standard": "No",
   "javascript": null,
   "json": null,
   "letter_head": null,
-  "modified": "2025-11-05 13:37:14.815196",
+  "modified": "2025-11-28 12:23:44.010685",
   "module": "Selling",
-  "name": "To Be Manufactured for Delivery",
+  "name": "Partial Dispatch Report",
   "prepared_report": 0,
-  "query": "SELECT\r\n    soi.item_code AS \"Item:Link/Item:120\",\r\n    SUM(soi.qty - soi.delivered_qty) AS \"To Manufacture:Float:120\"\r\nFROM\r\n    `tabSales Order Item` soi\r\nJOIN\r\n    `tabSales Order` so ON soi.parent = so.name\r\nWHERE\r\n    so.docstatus = 1\r\n    AND so.status NOT IN ('Closed', 'Cancelled')\r\n    AND (soi.qty - soi.delivered_qty) > 0\r\n    AND so.transaction_date BETWEEN %(from_date)s AND %(to_date)s\r\nGROUP BY\r\n    soi.item_code\r\nORDER BY\r\n    soi.item_code;\r\n",
+  "query": "SELECT\r\n    so.transaction_date AS \"Date:Date:100\",\r\n    so.customer AS \"Customer:Link/Customer:150\",\r\n    soi.item_code AS \"Item:Link/Item:120\",\r\n    soi.qty AS \"Ordered Qty:Float:100\",\r\n    soi.delivered_qty AS \"Delivered Qty:Float:100\",\r\n    (soi.qty - soi.delivered_qty) AS \"Pending Qty:Float:100\",\r\n    so.status AS \"Order Status:Data:120\"\r\nFROM\r\n    `tabSales Order Item` soi\r\nJOIN\r\n    `tabSales Order` so ON soi.parent = so.name\r\nWHERE\r\n    so.docstatus = 1\r\n    AND so.status NOT IN ('Closed', 'Cancelled')\r\n    AND soi.delivered_qty > 0\r\n    AND soi.delivered_qty < soi.qty\r\nORDER BY\r\n    so.transaction_date DESC, so.name;\r\n",
   "ref_doctype": "Sales Order",
   "reference_report": null,
-  "report_name": "To Be Manufactured for Delivery",
+  "report_name": "Partial Dispatch Report",
   "report_script": null,
   "report_type": "Query Report",
   "roles": [
    {
-    "parent": "To Be Manufactured for Delivery",
-    "parentfield": "roles",
-    "parenttype": "Report",
-    "role": "Sales User"
-   },
-   {
-    "parent": "To Be Manufactured for Delivery",
+    "parent": "Partial Dispatch Report",
     "parentfield": "roles",
     "parenttype": "Report",
     "role": "Sales Manager"
-   },
-   {
-    "parent": "To Be Manufactured for Delivery",
-    "parentfield": "roles",
-    "parenttype": "Report",
-    "role": "Stock User"
    }
   ],
   "timeout": 0
@@ -582,7 +476,7 @@
   "javascript": null,
   "json": "{}",
   "letter_head": null,
-  "modified": "2025-11-05 13:37:05.816207",
+  "modified": "2025-11-28 12:10:07.155305",
   "module": "Stock",
   "name": "Warehouse Summary Report",
   "prepared_report": 0,
@@ -597,13 +491,7 @@
     "parent": "Warehouse Summary Report",
     "parentfield": "roles",
     "parenttype": "Report",
-    "role": "Stock User"
-   },
-   {
-    "parent": "Warehouse Summary Report",
-    "parentfield": "roles",
-    "parenttype": "Report",
-    "role": "Sales User"
+    "role": "Sales Manager"
    }
   ],
   "timeout": 0
@@ -615,73 +503,56 @@
   "disabled": 0,
   "docstatus": 0,
   "doctype": "Report",
-  "filters": [
-   {
-    "default": "Today",
-    "fieldname": "from_date",
-    "fieldtype": "Date",
-    "label": "From Date",
-    "mandatory": 0,
-    "options": "From Date",
-    "parent": "Partial Dispatch Report",
-    "parentfield": "filters",
-    "parenttype": "Report",
-    "wildcard_filter": 0
-   },
-   {
-    "default": "Today",
-    "fieldname": "to_date",
-    "fieldtype": "Date",
-    "label": "To Date",
-    "mandatory": 0,
-    "options": "To Date",
-    "parent": "Partial Dispatch Report",
-    "parentfield": "filters",
-    "parenttype": "Report",
-    "wildcard_filter": 0
-   }
-  ],
+  "filters": [],
   "is_standard": "No",
   "javascript": null,
   "json": null,
   "letter_head": null,
-  "modified": "2025-11-05 13:36:41.326778",
+  "modified": "2025-11-28 12:24:25.357101",
   "module": "Selling",
-  "name": "Partial Dispatch Report",
+  "name": "Pending Report",
   "prepared_report": 0,
-  "query": "SELECT\r\n    so.transaction_date AS \"Date:Date:100\",\r\n    so.customer AS \"Customer:Link/Customer:150\",\r\n    soi.item_code AS \"Item:Link/Item:120\",\r\n    soi.qty AS \"Ordered Qty:Float:100\",\r\n    soi.delivered_qty AS \"Delivered Qty:Float:100\",\r\n    (soi.qty - soi.delivered_qty) AS \"Pending Qty:Float:100\",\r\n    so.status AS \"Order Status:Data:120\"\r\nFROM\r\n    `tabSales Order Item` soi\r\nJOIN\r\n    `tabSales Order` so ON soi.parent = so.name\r\nWHERE\r\n    so.docstatus = 1\r\n    AND so.status NOT IN ('Closed', 'Cancelled')\r\n    AND soi.delivered_qty > 0\r\n    AND soi.delivered_qty < soi.qty\r\n    AND so.transaction_date BETWEEN %(from_date)s AND %(to_date)s\r\nORDER BY\r\n    so.transaction_date DESC, so.name;\r\n",
+  "query": "SELECT\r\n    so.name AS \"Sales Order:Link/Sales Order:120\",\r\n    so.customer AS \"Customer:Link/Customer:180\",\r\n    so.transaction_date AS \"Order Date:Date:100\",\r\n    so.workflow_state AS \"Workflow State::150\",\r\n    so.owner AS \"Owner::120\"\r\nFROM\r\n    `tabSales Order` so\r\nWHERE\r\n    so.docstatus < 2\r\n    AND so.workflow_state = 'Pending'\r\nORDER BY\r\n    so.transaction_date DESC, so.name DESC;\r\n",
   "ref_doctype": "Sales Order",
   "reference_report": null,
-  "report_name": "Partial Dispatch Report",
+  "report_name": "Pending Report",
   "report_script": null,
   "report_type": "Query Report",
   "roles": [
    {
-    "parent": "Partial Dispatch Report",
+    "parent": "Pending Report",
     "parentfield": "roles",
     "parenttype": "Report",
-    "role": "Accounts User"
-   },
+    "role": "Sales Manager"
+   }
+  ],
+  "timeout": 0
+ },
+ {
+  "add_total_row": 0,
+  "add_translate_data": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "No",
+  "javascript": null,
+  "json": null,
+  "letter_head": null,
+  "modified": "2025-11-28 12:24:06.421519",
+  "module": "Selling",
+  "name": "To Be Manufactured for Delivery",
+  "prepared_report": 0,
+  "query": "SELECT\r\n    soi.item_code AS \"Item:Link/Item:120\",\r\n    SUM(soi.qty - soi.delivered_qty) AS \"To Manufacture:Float:120\"\r\nFROM\r\n    `tabSales Order Item` soi\r\nJOIN\r\n    `tabSales Order` so ON soi.parent = so.name\r\nWHERE\r\n    so.docstatus = 1\r\n    AND so.status NOT IN ('Closed', 'Cancelled')\r\n    AND (soi.qty - soi.delivered_qty) > 0\r\nGROUP BY\r\n    soi.item_code\r\nORDER BY\r\n    soi.item_code;\r\n",
+  "ref_doctype": "Sales Order",
+  "reference_report": null,
+  "report_name": "To Be Manufactured for Delivery",
+  "report_script": null,
+  "report_type": "Query Report",
+  "roles": [
    {
-    "parent": "Partial Dispatch Report",
-    "parentfield": "roles",
-    "parenttype": "Report",
-    "role": "Maintenance User"
-   },
-   {
-    "parent": "Partial Dispatch Report",
-    "parentfield": "roles",
-    "parenttype": "Report",
-    "role": "Sales User"
-   },
-   {
-    "parent": "Partial Dispatch Report",
-    "parentfield": "roles",
-    "parenttype": "Report",
-    "role": "Stock User"
-   },
-   {
-    "parent": "Partial Dispatch Report",
+    "parent": "To Be Manufactured for Delivery",
     "parentfield": "roles",
     "parenttype": "Report",
     "role": "Sales Manager"
