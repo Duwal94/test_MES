@@ -74,5 +74,24 @@
   "reference_doctype": "Production Plan",
   "script": "# Type: DocType Event\r\n# Ref Doctype: Production Plan\r\n# Trigger: on_cancel\r\n\r\ndef dbg(stage, docname, msg):\r\n    frappe.msgprint(f\"[{stage}] [{docname}] {msg}\")\r\n\r\ntry:\r\n    # find submitted Stock Entries that reference this Production Plan\r\n    res = frappe.get_all(\"Stock Entry\", filters={\r\n        \"custom_production_plan\": doc.name,\r\n        \"docstatus\": 1\r\n    }, fields=[\"name\"])\r\n\r\n    if not res:\r\n        frappe.msgprint(\"No linked submitted Stock Entries found for reversal.\")\r\n    else:\r\n        for r in res:\r\n            se_name = r.get(\"name\")\r\n            try:\r\n                se = frappe.get_doc(\"Stock Entry\", se_name)\r\n                se.cancel()\r\n                dbg(\"CANCEL\", doc.name, f\"Cancelled Stock Entry {se_name}\")\r\n            except Exception as inner_e:\r\n                # log but continue cancelling others\r\n                frappe.log_error(f\"Failed to cancel {se_name}: {inner_e}\", \"Production Plan: cancel SE\")\r\n\r\n        frappe.msgprint(\"Linked Stock Entries processed for cancellation.\")\r\n\r\nexcept Exception as e:\r\n    frappe.throw(f\"[Cancel Error] {e}\")\r\n",
   "script_type": "DocType Event"
+ },
+ {
+  "allow_guest": 0,
+  "api_method": null,
+  "cron_format": null,
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Server Script",
+  "doctype_event": "After Save",
+  "enable_rate_limit": 0,
+  "event_frequency": "All",
+  "modified": "2025-12-08 16:22:40.984705",
+  "module": null,
+  "name": "auto delivery",
+  "rate_limit_count": 5,
+  "rate_limit_seconds": 86400,
+  "reference_doctype": "Sales Order",
+  "script": "if doc.workflow_state == 'Approved':\r\n    # 1. Check if a Delivery Note already exists for this Order\r\n    # We ignore Cancelled (docstatus=2) Delivery Notes\r\n    if not frappe.db.exists(\"Delivery Note\", {\"against_sales_order\": doc.name, \"docstatus\": [\"!=\", 2]}):\r\n        \r\n        try:\r\n            # 2. Create a new empty Delivery Note\r\n            dn = frappe.new_doc(\"Delivery Note\")\r\n            dn.posting_date = frappe.utils.nowdate()\r\n            dn.company = doc.company\r\n            dn.customer = doc.customer\r\n            dn.currency = doc.currency\r\n            dn.selling_price_list = doc.selling_price_list\r\n            \r\n            # 3. Loop through Sales Order items and add them to Delivery Note\r\n            for item in doc.items:\r\n                # Only map items that are not \"Service\" (optional check)\r\n                dn_item = dn.append(\"items\", {})\r\n                dn_item.item_code = item.item_code\r\n                dn_item.item_name = item.item_name\r\n                dn_item.description = item.description\r\n                dn_item.uom = item.uom\r\n                dn_item.conversion_factor = item.conversion_factor\r\n                dn_item.qty = item.qty\r\n                dn_item.rate = item.rate\r\n                dn_item.warehouse = item.warehouse\r\n                \r\n                # CRITICAL: These two lines link the DN item back to the SO item\r\n                # This ensures the \"Delivered %\" updates correctly on the Sales Order\r\n                dn_item.against_sales_order = doc.name\r\n                dn_item.so_detail = item.name \r\n\r\n            # 4. Save (Insert) the document\r\n            dn.insert(ignore_permissions=True)\r\n\r\n            frappe.msgprint(f\"Delivery Note {dn.name} created successfully.\")\r\n\r\n        except Exception as e:\r\n            frappe.log_error(title=\"Manual DN Create Failed\", message=str(e))",
+  "script_type": "DocType Event"
  }
 ]
