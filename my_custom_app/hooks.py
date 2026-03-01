@@ -64,7 +64,11 @@ fixtures = [
     {"doctype": "Report Filter"},
 
     # --- Workspaces (with child table) ---
-  
+    {
+        "doctype": "Workspace",
+        "filters": [],
+        "child_doctypes": ["Workspace Detail"]
+    },
 
     # --- Website Related ---
     {"doctype": "Web Page"},
