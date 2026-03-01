@@ -6,6 +6,74 @@
   "disabled": 0,
   "docstatus": 0,
   "doctype": "Report",
+  "filters": [],
+  "is_standard": "No",
+  "javascript": null,
+  "json": null,
+  "letter_head": null,
+  "modified": "2025-12-22 11:33:15.173439",
+  "module": "Stock",
+  "name": "Delivery Note",
+  "prepared_report": 0,
+  "query": "SELECT\r\ndn.name AS \"Delivery Note:Link/Delivery Note:160\",\r\ndn.posting_date AS \"Posting Date:Date:120\",\r\ndn.customer AS \"Customer:Link/Customer:200\",\r\n'Draft' AS \"Status:Data:120\"\r\nFROM `tabDelivery Note` dn\r\nWHERE dn.docstatus = 0\r\nORDER BY dn.posting_date DESC;\r\n",
+  "ref_doctype": "Delivery Note",
+  "reference_report": null,
+  "report_name": "Delivery Note",
+  "report_script": "\r\n",
+  "report_type": "Query Report",
+  "roles": [
+   {
+    "parent": "Delivery Note",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Stock Manager"
+   },
+   {
+    "parent": "Delivery Note",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Delivery User"
+   },
+   {
+    "parent": "Delivery Note",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Delivery Manager"
+   },
+   {
+    "parent": "Delivery Note",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Sales User"
+   },
+   {
+    "parent": "Delivery Note",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts User"
+   },
+   {
+    "parent": "Delivery Note",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Stock User"
+   },
+   {
+    "parent": "Delivery Note",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Sales Manager"
+   }
+  ],
+  "timeout": 0
+ },
+ {
+  "add_total_row": 0,
+  "add_translate_data": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
   "filters": [
    {
     "default": "Today",
@@ -36,7 +104,7 @@
   "javascript": null,
   "json": null,
   "letter_head": null,
-  "modified": "2025-11-05 13:38:21.612441",
+  "modified": "2025-12-22 13:06:22.976700",
   "module": "Manufacturing",
   "name": "Stitching Work Today",
   "prepared_report": 0,
@@ -99,7 +167,7 @@
   "javascript": null,
   "json": null,
   "letter_head": null,
-  "modified": "2025-11-05 13:38:10.293672",
+  "modified": "2025-12-22 13:06:32.700845",
   "module": "Stock",
   "name": "Cutting Section",
   "prepared_report": 0,
@@ -162,7 +230,7 @@
   "javascript": null,
   "json": null,
   "letter_head": null,
-  "modified": "2025-11-05 13:37:58.283634",
+  "modified": "2025-12-22 13:06:43.323168",
   "module": "Stock",
   "name": "Quilting Section",
   "prepared_report": 0,
@@ -225,7 +293,7 @@
   "javascript": null,
   "json": null,
   "letter_head": null,
-  "modified": "2025-11-05 13:37:51.343645",
+  "modified": "2025-12-22 13:07:25.636290",
   "module": "Stock",
   "name": "Pillow Section",
   "prepared_report": 0,
@@ -288,7 +356,7 @@
   "javascript": null,
   "json": null,
   "letter_head": null,
-  "modified": "2025-11-05 13:37:42.733206",
+  "modified": "2025-12-22 13:06:55.560058",
   "module": "Manufacturing",
   "name": "Stitching With Date Filter",
   "prepared_report": 0,
@@ -351,11 +419,11 @@
   "javascript": null,
   "json": null,
   "letter_head": null,
-  "modified": "2025-11-28 12:13:14.154416",
+  "modified": "2025-12-22 12:56:41.085253",
   "module": "Selling",
   "name": "Dispatch Report",
   "prepared_report": 0,
-  "query": "SELECT\r\n    dn.name AS \"Delivery Note:Link/Delivery Note:150\",\r\n    dn.customer AS \"Customer:Link/Customer:180\",\r\n    dni.item_name AS \"Item Name::180\",\r\n    dni.qty AS \"Quantity:Float:100\",\r\n    dni.uom AS \"UOM:Link/UOM:80\",\r\n    dni.warehouse AS \"Warehouse:Link/Warehouse:150\"\r\nFROM\r\n    `tabDelivery Note` dn\r\nINNER JOIN\r\n    `tabDelivery Note Item` dni ON dn.name = dni.parent\r\nWHERE\r\n    dn.docstatus = 1\r\n    AND dn.posting_date BETWEEN %(from_date)s AND %(to_date)s\r\nORDER BY\r\n    dn.name, dni.item_code;\r\n",
+  "query": "SELECT\r\n    dn.name AS \"Delivery Note:Link/Delivery Note:150\",\r\n    dn.customer AS \"Customer:Link/Customer:180\",\r\n    dni.item_name AS \"Item Name::180\",\r\n    dni.qty AS \"Quantity:Float:100\"\r\nFROM\r\n    `tabDelivery Note` dn\r\nINNER JOIN\r\n    `tabDelivery Note Item` dni ON dn.name = dni.parent\r\nWHERE\r\n    dn.docstatus = 1\r\n    AND dn.posting_date BETWEEN %(from_date)s AND %(to_date)s\r\nORDER BY\r\n    dn.name, dni.item_code;\r\n",
   "ref_doctype": "Delivery Note",
   "reference_report": null,
   "report_name": "Dispatch Report",
@@ -390,38 +458,6 @@
   "disabled": 0,
   "docstatus": 0,
   "doctype": "Report",
-  "filters": [],
-  "is_standard": "No",
-  "javascript": null,
-  "json": null,
-  "letter_head": null,
-  "modified": "2025-11-28 12:23:44.010685",
-  "module": "Selling",
-  "name": "Partial Dispatch Report",
-  "prepared_report": 0,
-  "query": "SELECT\r\n    so.transaction_date AS \"Date:Date:100\",\r\n    so.customer AS \"Customer:Link/Customer:150\",\r\n    soi.item_code AS \"Item:Link/Item:120\",\r\n    soi.qty AS \"Ordered Qty:Float:100\",\r\n    soi.delivered_qty AS \"Delivered Qty:Float:100\",\r\n    (soi.qty - soi.delivered_qty) AS \"Pending Qty:Float:100\",\r\n    so.status AS \"Order Status:Data:120\"\r\nFROM\r\n    `tabSales Order Item` soi\r\nJOIN\r\n    `tabSales Order` so ON soi.parent = so.name\r\nWHERE\r\n    so.docstatus = 1\r\n    AND so.status NOT IN ('Closed', 'Cancelled')\r\n    AND soi.delivered_qty > 0\r\n    AND soi.delivered_qty < soi.qty\r\nORDER BY\r\n    so.transaction_date DESC, so.name;\r\n",
-  "ref_doctype": "Sales Order",
-  "reference_report": null,
-  "report_name": "Partial Dispatch Report",
-  "report_script": null,
-  "report_type": "Query Report",
-  "roles": [
-   {
-    "parent": "Partial Dispatch Report",
-    "parentfield": "roles",
-    "parenttype": "Report",
-    "role": "Sales Manager"
-   }
-  ],
-  "timeout": 0
- },
- {
-  "add_total_row": 0,
-  "add_translate_data": 0,
-  "columns": [],
-  "disabled": 0,
-  "docstatus": 0,
-  "doctype": "Report",
   "filters": [
    {
     "default": "All Item Groups",
@@ -436,7 +472,7 @@
     "wildcard_filter": 0
    },
    {
-    "default": "Factory-WIP - SYN",
+    "default": "Factory - T",
     "fieldname": "warehouse",
     "fieldtype": "Link",
     "label": "Warehouse",
@@ -476,7 +512,7 @@
   "javascript": null,
   "json": "{}",
   "letter_head": null,
-  "modified": "2025-11-28 12:10:07.155305",
+  "modified": "2025-12-22 13:08:24.102396",
   "module": "Stock",
   "name": "Warehouse Summary Report",
   "prepared_report": 0,
@@ -489,6 +525,94 @@
   "roles": [
    {
     "parent": "Warehouse Summary Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Sales Manager"
+   }
+  ],
+  "timeout": 0
+ },
+ {
+  "add_total_row": 0,
+  "add_translate_data": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "No",
+  "javascript": null,
+  "json": null,
+  "letter_head": null,
+  "modified": "2026-02-09 16:50:46.945474",
+  "module": "Selling",
+  "name": "Sales order item wise",
+  "prepared_report": 0,
+  "query": "WITH per_item AS (\r\n    SELECT \r\n        so.name AS sales_order,\r\n        so.customer,\r\n        soi.item_name,\r\n        soi.qty,\r\n        soi.uom,\r\n        so.delivery_status,\r\n        soi.additional_notes,\r\n        GREATEST(so.modified, soi.modified) AS last_updated_on\r\n    FROM `tabSales Order` so\r\n    INNER JOIN `tabSales Order Item` soi \r\n        ON soi.parent = so.name\r\n    WHERE so.docstatus = 1\r\n      AND so.workflow_state = 'Approved'\r\n      AND so.delivery_status IN ('Not Delivered', 'Partly Delivered')\r\n),\r\n\r\nall_rows AS (\r\n    -- Normal item rows\r\n    SELECT \r\n        sales_order,\r\n        customer,\r\n        item_name,\r\n        qty,\r\n        uom,\r\n        delivery_status,\r\n        additional_notes,\r\n        last_updated_on,\r\n        0 AS is_total\r\n    FROM per_item\r\n\r\n    UNION ALL\r\n\r\n    -- Total row per Sales Order\r\n    SELECT \r\n        sales_order,\r\n        customer,\r\n        'TOTAL' AS item_name,\r\n        SUM(qty) AS qty,\r\n        NULL AS uom,\r\n        delivery_status,\r\n        NULL AS additional_notes,\r\n        MAX(last_updated_on) AS last_updated_on,\r\n        1 AS is_total\r\n    FROM per_item\r\n    GROUP BY sales_order, customer, delivery_status\r\n),\r\n\r\nnumbered AS (\r\n    SELECT \r\n        sales_order,\r\n        customer,\r\n        item_name,\r\n        qty,\r\n        uom,\r\n        delivery_status,\r\n        additional_notes,\r\n        last_updated_on,\r\n        is_total,\r\n        ROW_NUMBER() OVER (\r\n            PARTITION BY sales_order \r\n            ORDER BY is_total, item_name\r\n        ) AS rn\r\n    FROM all_rows\r\n)\r\n\r\nSELECT\r\n    CASE WHEN rn = 1 THEN sales_order ELSE '' END \r\n        AS \"Sales Order:Link/Sales Order:160\",\r\n\r\n    CASE WHEN rn = 1 THEN customer ELSE '' END \r\n        AS \"Customer:Link/Customer:180\",\r\n\r\n    item_name AS \"Item Name:Data:200\",\r\n    qty AS \"Qty:Float:80\",\r\n    uom AS \"UOM:Data:80\",\r\n    delivery_status AS \"Delivery Status:Data:120\",\r\n\r\n    CASE \r\n        WHEN is_total = 0 THEN additional_notes \r\n        ELSE '' \r\n    END AS \"Additional Notes:Data:250\"\r\n\r\nFROM numbered\r\n-- Order sales orders by last updated date descending, then items normally\r\nORDER BY last_updated_on DESC, sales_order, is_total, item_name;\r\n",
+  "ref_doctype": "Sales Order",
+  "reference_report": "",
+  "report_name": "Sales order item wise",
+  "report_script": null,
+  "report_type": "Query Report",
+  "roles": [
+   {
+    "parent": "Sales order item wise",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Accounts User"
+   },
+   {
+    "parent": "Sales order item wise",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Maintenance User"
+   },
+   {
+    "parent": "Sales order item wise",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Sales User"
+   },
+   {
+    "parent": "Sales order item wise",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Stock User"
+   },
+   {
+    "parent": "Sales order item wise",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Sales Manager"
+   }
+  ],
+  "timeout": 0
+ },
+ {
+  "add_total_row": 0,
+  "add_translate_data": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "No",
+  "javascript": null,
+  "json": null,
+  "letter_head": null,
+  "modified": "2025-11-28 12:23:44.010685",
+  "module": "Selling",
+  "name": "Partial Dispatch Report",
+  "prepared_report": 0,
+  "query": "SELECT\r\n    so.transaction_date AS \"Date:Date:100\",\r\n    so.customer AS \"Customer:Link/Customer:150\",\r\n    soi.item_code AS \"Item:Link/Item:120\",\r\n    soi.qty AS \"Ordered Qty:Float:100\",\r\n    soi.delivered_qty AS \"Delivered Qty:Float:100\",\r\n    (soi.qty - soi.delivered_qty) AS \"Pending Qty:Float:100\",\r\n    so.status AS \"Order Status:Data:120\"\r\nFROM\r\n    `tabSales Order Item` soi\r\nJOIN\r\n    `tabSales Order` so ON soi.parent = so.name\r\nWHERE\r\n    so.docstatus = 1\r\n    AND so.status NOT IN ('Closed', 'Cancelled')\r\n    AND soi.delivered_qty > 0\r\n    AND soi.delivered_qty < soi.qty\r\nORDER BY\r\n    so.transaction_date DESC, so.name;\r\n",
+  "ref_doctype": "Sales Order",
+  "reference_report": null,
+  "report_name": "Partial Dispatch Report",
+  "report_script": null,
+  "report_type": "Query Report",
+  "roles": [
+   {
+    "parent": "Partial Dispatch Report",
     "parentfield": "roles",
     "parenttype": "Report",
     "role": "Sales Manager"

@@ -17,7 +17,7 @@ def get_reports(from_date=None, to_date=None):
         "quilting": "Quilting Section",
         "pillow": "Pillow Section",
         "dispatch": "Dispatch Report",
-        "pending": "Pending Report",
+        "Pending Delivery Note": "Delivery Note",
     }
 
     output = {}
