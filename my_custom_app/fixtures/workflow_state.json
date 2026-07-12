@@ -20,11 +20,11 @@
  {
   "docstatus": 0,
   "doctype": "Workflow State",
-  "icon": "question-sign",
-  "modified": "2025-08-12 15:08:36.408185",
-  "name": "Pending",
+  "icon": "",
+  "modified": "2025-09-04 12:06:57.086626",
+  "name": "Draft",
   "style": "",
-  "workflow_state_name": "Pending"
+  "workflow_state_name": "Draft"
  },
  {
   "docstatus": 0,
@@ -38,10 +38,10 @@
  {
   "docstatus": 0,
   "doctype": "Workflow State",
-  "icon": "",
-  "modified": "2025-09-04 12:06:57.086626",
-  "name": "Draft",
+  "icon": "question-sign",
+  "modified": "2025-08-12 15:08:36.408185",
+  "name": "Pending",
   "style": "",
-  "workflow_state_name": "Draft"
+  "workflow_state_name": "Pending"
  }
 ]

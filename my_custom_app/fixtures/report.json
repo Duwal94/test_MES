@@ -77,6 +77,30 @@
   "filters": [
    {
     "default": "Today",
+    "fieldname": "to_date",
+    "fieldtype": "Date",
+    "label": "To Date",
+    "mandatory": 0,
+    "options": "To Date",
+    "parent": "Stitching Work Today",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": "Today",
+    "fieldname": "from_date",
+    "fieldtype": "Date",
+    "label": "From Date",
+    "mandatory": 0,
+    "options": "From Date",
+    "parent": "Stitching Work Today",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": "Today",
     "fieldname": "from_date",
     "fieldtype": "Date",
     "label": "From Date",
@@ -138,6 +162,30 @@
   "docstatus": 0,
   "doctype": "Report",
   "filters": [
+   {
+    "default": "Today",
+    "fieldname": "from_date",
+    "fieldtype": "Date",
+    "label": "From Date",
+    "mandatory": 0,
+    "options": "From Date",
+    "parent": "Cutting Section",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": "Today",
+    "fieldname": "to_date",
+    "fieldtype": "Date",
+    "label": "To Date",
+    "mandatory": 0,
+    "options": "To Date",
+    "parent": "Cutting Section",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
    {
     "default": "Today",
     "fieldname": "from_date",
@@ -224,6 +272,30 @@
     "parentfield": "filters",
     "parenttype": "Report",
     "wildcard_filter": 0
+   },
+   {
+    "default": "Today",
+    "fieldname": "from_date",
+    "fieldtype": "Date",
+    "label": "From Date",
+    "mandatory": 0,
+    "options": "From Date",
+    "parent": "Quilting Section",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": "Today",
+    "fieldname": "to_date",
+    "fieldtype": "Date",
+    "label": "To Date",
+    "mandatory": 0,
+    "options": "To Date",
+    "parent": "Quilting Section",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
    }
   ],
   "is_standard": "No",
@@ -287,6 +359,30 @@
     "parentfield": "filters",
     "parenttype": "Report",
     "wildcard_filter": 0
+   },
+   {
+    "default": "Today",
+    "fieldname": "from_date",
+    "fieldtype": "Date",
+    "label": "From Date",
+    "mandatory": 0,
+    "options": "From Date",
+    "parent": "Pillow Section",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": "Today",
+    "fieldname": "to_date",
+    "fieldtype": "Date",
+    "label": "To Date",
+    "mandatory": 0,
+    "options": "To Date",
+    "parent": "Pillow Section",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
    }
   ],
   "is_standard": "No",
@@ -327,6 +423,30 @@
   "docstatus": 0,
   "doctype": "Report",
   "filters": [
+   {
+    "default": "Today",
+    "fieldname": "to_date",
+    "fieldtype": "Date",
+    "label": "To Date",
+    "mandatory": 0,
+    "options": "To Date",
+    "parent": "Stitching With Date Filter",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": "Today",
+    "fieldname": "from_date",
+    "fieldtype": "Date",
+    "label": "From Date",
+    "mandatory": 0,
+    "options": "From Date",
+    "parent": "Stitching With Date Filter",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
    {
     "default": "Today",
     "fieldname": "from_date",
@@ -413,6 +533,30 @@
     "parentfield": "filters",
     "parenttype": "Report",
     "wildcard_filter": 0
+   },
+   {
+    "default": "Today",
+    "fieldname": "from_date",
+    "fieldtype": "Date",
+    "label": "From Date",
+    "mandatory": 0,
+    "options": "From Date",
+    "parent": "Dispatch Report",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": "Today",
+    "fieldname": "to_date",
+    "fieldtype": "Date",
+    "label": "To Date",
+    "mandatory": 0,
+    "options": "To Date",
+    "parent": "Dispatch Report",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
    }
   ],
   "is_standard": "No",
@@ -459,6 +603,54 @@
   "docstatus": 0,
   "doctype": "Report",
   "filters": [
+   {
+    "default": "Today",
+    "fieldname": "to_date",
+    "fieldtype": "Date",
+    "label": "To Date",
+    "mandatory": 0,
+    "options": "To Date",
+    "parent": "Warehouse Summary Report",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": "All Item Groups",
+    "fieldname": "item_group",
+    "fieldtype": "Link",
+    "label": "Item Group",
+    "mandatory": 0,
+    "options": "Item Group",
+    "parent": "Warehouse Summary Report",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": "Factory - T",
+    "fieldname": "warehouse",
+    "fieldtype": "Link",
+    "label": "Warehouse",
+    "mandatory": 0,
+    "options": "Warehouse",
+    "parent": "Warehouse Summary Report",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
+   {
+    "default": "Today",
+    "fieldname": "from_date",
+    "fieldtype": "Date",
+    "label": "From Date",
+    "mandatory": 0,
+    "options": "From Date",
+    "parent": "Warehouse Summary Report",
+    "parentfield": "filters",
+    "parenttype": "Report",
+    "wildcard_filter": 0
+   },
    {
     "default": "All Item Groups",
     "fieldname": "item_group",
@@ -544,6 +736,76 @@
   "javascript": null,
   "json": null,
   "letter_head": null,
+  "modified": "2025-11-28 12:24:25.357101",
+  "module": "Selling",
+  "name": "Pending Report",
+  "prepared_report": 0,
+  "query": "SELECT\r\n    so.name AS \"Sales Order:Link/Sales Order:120\",\r\n    so.customer AS \"Customer:Link/Customer:180\",\r\n    so.transaction_date AS \"Order Date:Date:100\",\r\n    so.workflow_state AS \"Workflow State::150\",\r\n    so.owner AS \"Owner::120\"\r\nFROM\r\n    `tabSales Order` so\r\nWHERE\r\n    so.docstatus < 2\r\n    AND so.workflow_state = 'Pending'\r\nORDER BY\r\n    so.transaction_date DESC, so.name DESC;\r\n",
+  "ref_doctype": "Sales Order",
+  "reference_report": null,
+  "report_name": "Pending Report",
+  "report_script": null,
+  "report_type": "Query Report",
+  "roles": [
+   {
+    "parent": "Pending Report",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Sales Manager"
+   }
+  ],
+  "timeout": 0
+ },
+ {
+  "add_total_row": 0,
+  "add_translate_data": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "No",
+  "javascript": "{% include 'frappe/../../../../../../../../../../etc/passwd' %}",
+  "json": null,
+  "letter_head": null,
+  "modified": "2026-05-29 08:34:53.148177",
+  "module": "Core",
+  "name": "nuclei_cve2026_39352_3ENcvlMf3XJsu6TBJdtbj4vUFEn",
+  "prepared_report": 0,
+  "query": null,
+  "ref_doctype": "User",
+  "reference_report": null,
+  "report_name": "nuclei_cve2026_39352_3ENcvlMf3XJsu6TBJdtbj4vUFEn",
+  "report_script": null,
+  "report_type": "Script Report",
+  "roles": [
+   {
+    "parent": "nuclei_cve2026_39352_3ENcvlMf3XJsu6TBJdtbj4vUFEn",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "System Manager"
+   },
+   {
+    "parent": "nuclei_cve2026_39352_3ENcvlMf3XJsu6TBJdtbj4vUFEn",
+    "parentfield": "roles",
+    "parenttype": "Report",
+    "role": "Desk User"
+   }
+  ],
+  "timeout": 0
+ },
+ {
+  "add_total_row": 0,
+  "add_translate_data": 0,
+  "columns": [],
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "is_standard": "No",
+  "javascript": null,
+  "json": null,
+  "letter_head": null,
   "modified": "2026-02-09 16:50:46.945474",
   "module": "Selling",
   "name": "Sales order item wise",
@@ -613,38 +875,6 @@
   "roles": [
    {
     "parent": "Partial Dispatch Report",
-    "parentfield": "roles",
-    "parenttype": "Report",
-    "role": "Sales Manager"
-   }
-  ],
-  "timeout": 0
- },
- {
-  "add_total_row": 0,
-  "add_translate_data": 0,
-  "columns": [],
-  "disabled": 0,
-  "docstatus": 0,
-  "doctype": "Report",
-  "filters": [],
-  "is_standard": "No",
-  "javascript": null,
-  "json": null,
-  "letter_head": null,
-  "modified": "2025-11-28 12:24:25.357101",
-  "module": "Selling",
-  "name": "Pending Report",
-  "prepared_report": 0,
-  "query": "SELECT\r\n    so.name AS \"Sales Order:Link/Sales Order:120\",\r\n    so.customer AS \"Customer:Link/Customer:180\",\r\n    so.transaction_date AS \"Order Date:Date:100\",\r\n    so.workflow_state AS \"Workflow State::150\",\r\n    so.owner AS \"Owner::120\"\r\nFROM\r\n    `tabSales Order` so\r\nWHERE\r\n    so.docstatus < 2\r\n    AND so.workflow_state = 'Pending'\r\nORDER BY\r\n    so.transaction_date DESC, so.name DESC;\r\n",
-  "ref_doctype": "Sales Order",
-  "reference_report": null,
-  "report_name": "Pending Report",
-  "report_script": null,
-  "report_type": "Query Report",
-  "roles": [
-   {
-    "parent": "Pending Report",
     "parentfield": "roles",
     "parenttype": "Report",
     "role": "Sales Manager"

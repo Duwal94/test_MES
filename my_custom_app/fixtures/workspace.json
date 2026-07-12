@@ -1420,7 +1420,7 @@
     "type": "Link"
    }
   ],
-  "modified": "2026-02-09 16:00:54.161237",
+  "modified": "2026-05-29 15:50:21.424437",
   "module": "Selling",
   "name": "Selling",
   "number_cards": [],
@@ -1431,6 +1431,23 @@
   "roles": [],
   "sequence_id": 6.0,
   "shortcuts": [
+   {
+    "color": "Yellow",
+    "doc_view": "",
+    "format": "{}",
+    "icon": null,
+    "kanban_board": null,
+    "label": "Sales Order",
+    "link_to": "Sales Order",
+    "parent": "Selling",
+    "parentfield": "shortcuts",
+    "parenttype": "Workspace",
+    "report_ref_doctype": null,
+    "restrict_to_domain": null,
+    "stats_filter": "[[\"Sales Order\",\"delivery_status\",\"!=\",\"Fully Delivered\",false],[\"Sales Order\",\"status\",\"not in\",[\"Closed\",\"Cancelled\",\"Completed\",null],false]]",
+    "type": "DocType",
+    "url": null
+   },
    {
     "color": "Grey",
     "doc_view": "List",
@@ -1444,7 +1461,7 @@
     "parenttype": "Workspace",
     "report_ref_doctype": null,
     "restrict_to_domain": null,
-    "stats_filter": "[[\"Sales Order\",\"status\",\"!=\",\"Completed\",false],[\"Sales Order\",\"delivery_status\",\"!=\",\"Fully Delivered\",false],[\"Sales Order\",\"workflow_state\",\"=\",\"Approved\",false],[\"Sales Order\",\"status\",\"!=\",\"Cancelled\",false]]",
+    "stats_filter": "[[\"Sales Order\",\"delivery_status\",\"!=\",\"Fully Delivered\",false],[\"Sales Order\",\"workflow_state\",\"=\",\"Approved\",false],[\"Sales Order\",\"status\",\"not in\",[\"Completed\",\"Closed\",\"Cancelled\",null],false]]",
     "type": "DocType",
     "url": null
    },
@@ -1479,23 +1496,6 @@
     "report_ref_doctype": null,
     "restrict_to_domain": null,
     "stats_filter": "[[\"Delivery Note\",\"status\",\"=\",\"To Bill\",false]]",
-    "type": "DocType",
-    "url": null
-   },
-   {
-    "color": "Yellow",
-    "doc_view": "",
-    "format": "{}",
-    "icon": null,
-    "kanban_board": null,
-    "label": "Sales Order",
-    "link_to": "Sales Order",
-    "parent": "Selling",
-    "parentfield": "shortcuts",
-    "parenttype": "Workspace",
-    "report_ref_doctype": null,
-    "restrict_to_domain": null,
-    "stats_filter": "[[\"Sales Order\",\"status\",\"!=\",\"Cancelled\",false],[\"Sales Order\",\"delivery_status\",\"!=\",\"Fully Delivered\",false]]",
     "type": "DocType",
     "url": null
    },
@@ -8664,7 +8664,7 @@
     "type": "Link"
    }
   ],
-  "modified": "2025-09-22 14:58:20.770621",
+  "modified": "2026-06-03 16:59:19.083362",
   "module": "Manufacturing",
   "name": "Manufacturing",
   "number_cards": [],
@@ -8688,7 +8688,7 @@
     "parenttype": "Workspace",
     "report_ref_doctype": null,
     "restrict_to_domain": null,
-    "stats_filter": "{\"is_active\":[\"=\",1]}",
+    "stats_filter": "[]",
     "type": "DocType",
     "url": null
    },
